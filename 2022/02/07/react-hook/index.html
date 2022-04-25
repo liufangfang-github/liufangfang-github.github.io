@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="useRefuseRef返回一个ref对象，对象只包含了一个current属性useRef() 返回undefined，可以在创建的时候传入一个null&#x2F;给一个初始值，useRef(null&#x2F;初始值)，传入的参数就是对象中current的值。useRef的变化不会主动渲染到页面 useImperativeHandle useImperativeHandle在使用ref时 自定义暴露给父组件的实例值">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-hook">
+<meta property="og:url" content="http://example.com/2022/02/07/react-hook/index.html">
+<meta property="og:site_name" content="前端博客">
+<meta property="og:description" content="useRefuseRef返回一个ref对象，对象只包含了一个current属性useRef() 返回undefined，可以在创建的时候传入一个null&#x2F;给一个初始值，useRef(null&#x2F;初始值)，传入的参数就是对象中current的值。useRef的变化不会主动渲染到页面 useImperativeHandle useImperativeHandle在使用ref时 自定义暴露给父组件的实例值">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-07T08:37:07.000Z">
+<meta property="article:modified_time" content="2022-02-15T03:42:33.539Z">
+<meta property="article:author" content="liufangfang">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/02/07/react-hook/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/02/07/react-hook/","path":"2022/02/07/react-hook/","title":"react-hook"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>react-hook | 前端博客</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">前端博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#useRef"><span class="nav-number">1.</span> <span class="nav-text">useRef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useImperativeHandle"><span class="nav-number">2.</span> <span class="nav-text">useImperativeHandle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useState"><span class="nav-number">3.</span> <span class="nav-text">useState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useEffect"><span class="nav-number">4.</span> <span class="nav-text">useEffect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useReducer"><span class="nav-number">5.</span> <span class="nav-text">useReducer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useMemo"><span class="nav-number">6.</span> <span class="nav-text">useMemo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useCallback"><span class="nav-number">7.</span> <span class="nav-text">useCallback</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">liufangfang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/07/react-hook/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liufangfang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端博客">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="react-hook | 前端博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          react-hook
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-02-07 16:37:07" itemprop="dateCreated datePublished" datetime="2022-02-07T16:37:07+08:00">2022-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-02-15 11:42:33" itemprop="dateModified" datetime="2022-02-15T11:42:33+08:00">2022-02-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><p>useRef返回一个ref对象，对象只包含了一个current属性<br>useRef() 返回undefined，可以在创建的时候传入一个null/给一个初始值，useRef(null/初始值)，传入的参数就是对象中current的值。<br><strong>useRef的变化不会主动渲染到页面</strong></p>
+<h2 id="useImperativeHandle"><a href="#useImperativeHandle" class="headerlink" title="useImperativeHandle"></a>useImperativeHandle</h2><p> useImperativeHandle在使用ref时 自定义暴露给父组件的实例值，使用子组件暴露的值/方法</p>
+<h2 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h2><p> 函数组件中定一个“state变量”，useState()返回当前定义的state和更新state的函数</p>
+<h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2><p> useEffect是异步的<br>一个组件中可以使用多个effect<br><strong>componentDidMount()</strong> 方法会在组件已经被渲染到DOM中后运行，依赖列表为空时只会被调用一次，类似于vue中的mounted<br>**componentWillUnmount()**从DOM中移除时会调用，依赖列表为空时类似于vue中的destroy生命周期<br><strong>componentDidUpdate()</strong> 会在更新后会被立即调用。首次渲染不会执行此方法。</p>
+<pre><code>useEffect(
+  () => &#123;
+    // 这里的代码块 等价于 componentDidMount
+    // do something...
+
+    // return的写法 等价于 componentWillUnmount 当前组件被卸载时执行
+    return () => &#123;
+       // do something...
+    &#125;;
+  &#125;,
+  // 依赖列表，当依赖的值有变更时候，执行副作用函数，等价于 componentDidUpdate
+  [ xxx，obj.xxx ]
+);</code></pre>
+<blockquote>
+<p>依赖列表是灵活的，有三种写法</p>
+</blockquote>
+<ul>
+<li>当数组为空[]，表示不会因为页面的状态改变而执行回调方法，仅在初始化执行一次</li>
+<li>当这个参数不传递表示页面的任何状态一旦变更都会执行回调方法</li>
+<li>数组非空时，数组里的值一旦发生变化，就会执行回调方法</li>
+</ul>
+<blockquote>
+<p>其他场景1:依赖某些值，但是不想在初始化时调用，只在依赖的值发生变化时调用，这里需要用到useRef 这个钩子</p>
+</blockquote>
+<pre><code>const firstLoad = useRef(true);
+useEffect(() => &#123;
+  if (firstLoad.current) &#123;
+    firstLoad.current = false;
+    return;
+  &#125;
+  // do something...
+&#125;, [依赖项]);
+</code></pre>
+
+<h2 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a>useReducer</h2><p> 不是一个必须的hook，不用它也可以完成正常的需求开发，useReducer可以使我们的代码具有更好的可读性、可维护性<br> <pre><code>const [state, dispatch] = useReducer(reducer, initState);</code></pre><br> useReducer接收两个参数：第一个参数是reducer函数，第二个参数是初始化的state</p>
+<h2 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo"></a>useMemo</h2><h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback"></a>useCallback</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/02/07/react-router/" rel="prev" title="react路由">
+                  <i class="fa fa-chevron-left"></i> react路由
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/02/07/js/" rel="next" title="js">
+                  js <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">liufangfang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
