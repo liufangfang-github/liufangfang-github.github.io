@@ -489,7 +489,7 @@ export default class ProductConfigItem extends Vue &#123;
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-25 17:35:21" itemprop="dateModified" datetime="2022-04-25T17:35:21+08:00">2022-04-25</time>
+      <time title="Modified: 2022-04-26 18:52:07" itemprop="dateModified" datetime="2022-04-26T18:52:07+08:00">2022-04-26</time>
     </span>
 
   
@@ -536,6 +536,7 @@ export default class ProductConfigItem extends Vue &#123;
 </blockquote>
 <pre><code>setup(props)&#123;
   watch(
+    // 监听引用类型
     props.info,
     (newV) => &#123;
       obj = reactive(newV)
@@ -546,6 +547,7 @@ export default class ProductConfigItem extends Vue &#123;
       deep: true
     &#125;
   )
+  // 监听基本类型
   watch(msg,(val) => &#123;
     console.log(val, '---watch msg ---')
   &#125;)
@@ -554,8 +556,16 @@ export default class ProductConfigItem extends Vue &#123;
     console.log(&#123; newVal, oldVal &#125;)
   &#125;)
 &#125;</code></pre>
-vue3中去掉了$refs属性</li>
+<blockquote>
+<p>watchEffect监听数据的变化</p>
+</blockquote>
+</li>
+<li>watchEffect会立即执行，页面首次加载就执行；watch需要添加immediate: true才会在页面首次加载执行</li>
+<li>watchEffect没有参数，获取不到原始值，代码中的依赖数据发生变化就会执行</li>
+<li>监听异步数据的变化比较合适</li>
+<li>也可以监听多个数据,user.name或msg发生变化都会触发<pre><code>watchEffect(() => &#123;<br>console.log(user.name, '----监听到user.name变化了')<br>console.log(msg.value, '----监听到msg变化了')<br>&#125;)</code></pre></li>
 </ul>
+<p>vue3中去掉了$refs属性</p>
 <blockquote>
 <p>defineAsyncComponent 定义异步组件</p>
 </blockquote>
