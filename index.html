@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,136 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/05/webpack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liufangfang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端博客">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 前端博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/05/webpack/" class="post-title-link" itemprop="url">webpack</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-05 10:53:13" itemprop="dateCreated datePublished" datetime="2022-05-05T10:53:13+08:00">2022-05-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-05-07 10:25:55" itemprop="dateModified" datetime="2022-05-07T10:25:55+08:00">2022-05-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>webpack是由node写的，支持node语法</p>
+<blockquote>
+<p>loader 在打包前对文件进行处理，也就是在打包前对文件进行预处理。loader的执行书序是从下到上，从右到左</p>
+</blockquote>
+<ul>
+<li>css-loader处理.css样式文件的内容</li>
+<li>style-loader 把js中import导入的样式文件打包到js中，运行js时，将样式文件自动插入到&lt;style&gt;标签中</li>
+<li>mini-css-extract-plugin把js中import的样式文件，单独打包成一个样式文件，结合html-webpack-plugin，以link的形式插入到html文件中。</li>
+<li><em>此插件不支持HMR(热更新Hot Module Replacement)，若修改了样式文件，是不能即时在浏览器中显示出来的，需要手动刷新页面</em>* 可以自己手动热更新<br>所以 style-loader 和 mini-css-extract-plugin不用一起使用</li>
+<li>autoprefixer添加上不生效的问题，需要在package.json 里 ( 与 devDependencies 同级 ) ，设置支持哪些浏览器，必须设置支持的浏览器才会自动添加浏览器兼容<pre><code>"browserslist": [<br>  "> 1%",<br>  "last 2 versions",<br>  "not ie <= 8",<br>  "android >= 2"<br>]</code></pre><br><br>也可以在postcss.config.js文件里设置浏览器支持<per><code>plugins: [ require('autoprefixer') (&#123;<br>  browsers: [ "> 1%", "last 2 versions"]<br>&#125;)]</code></per><ul>
+<li>webpack4内置了uglifyjs-webpack-plugin这个插件，mode：production时会自动调用组件压缩js。配置了optimization后，即使配置了mode：production。也不会压缩js文件，因为配置了optimization.minimizer就表示开发者自定义压缩组件</li>
+</ul>
+</li>
+</ul>
+<p><strong>loader的类型</strong></p>
+<ul>
+<li>pre前面执行的loader</li>
+<li>normal 普通的laoder</li>
+<li>内联的</li>
+<li>后置的</li>
+</ul>
+<blockquote>
+<p>babel处理js，简单的说就是把ES6的代码转译成ES5</p>
+</blockquote>
+<blockquote>
+<p>webpack打包图片</p>
+</blockquote>
+<ul>
+<li><p>js中创建图片引入</p>
+</li>
+<li><p>css中background引入</p>
+</li>
+<li><p>&lt;img src=’’&gt;</p>
+</li>
+<li><p>file-loader：打包文件放在build目录下</p>
+</li>
+<li><p>url-loader：把图片打包成base64，减少http请求</p>
+</li>
+<li><p><em>url-loader和file-loader同时引用时会导致图片不展示，可以在url-loader的fallback中引用file-loader</em>*</p>
+<pre><code>&#123;
+ test: /.(png|jpg|gif)$/,
+ use:&#123;
+   loader: 'url-loader',
+   options: &#123;
+     limit: 20,
+     fallback: &#123;
+       loader: 'file-loader',
+       options: &#123;
+         name: 'img/[name].[ext]?t=[hash:7]'
+       &#125;
+     &#125;
+   &#125;
+ &#125;
+&#125;</code></pre></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -943,97 +1073,6 @@ return (
    &#125;
 &#125;;
 </code></pre>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/07/react-router/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 前端博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/07/react-router/" class="post-title-link" itemprop="url">react路由</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-02-07 16:37:07" itemprop="dateCreated datePublished" datetime="2022-02-07T16:37:07+08:00">2022-02-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-02-08 18:57:56" itemprop="dateModified" datetime="2022-02-08T18:57:56+08:00">2022-02-08</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p><a target="_blank" rel="noopener" href="https://react-guide.github.io/react-router-cn/docs/API.html#route">路由文档</a><br><a target="_blank" rel="noopener" href="https://v5.reactrouter.com/web/api/Hooks/uselocation">路由API</a></p>
-<h2 id="query"><a href="#query" class="headerlink" title="query"></a>query</h2><p><strong>从 v4 开始，删除了 this.props.location.query 对象。删除它的主要原因是允许开发人员创建独特的方式来存储 query 字符串</strong><br><a target="_blank" rel="noopener" href="https://www.delftstack.com/zh/howto/react/force-rerender-in-react/">参考文档</a><br>函数组建中获取query使用useLocation() 钩子的实例，钩子不返回解析的query对象，需要解析钩子的实例一获取key/value对参数，<br><strong>query-string</strong> 库可以解析query对象</p>
-<pre><code>const queryToStr = require('query-string'); const result = queryToStr.parse(useLocation().search);</code></pre>
-<h2 id="params"><a href="#params" class="headerlink" title="params"></a>params</h2><p>useParams返回一个包含key/value的对象。useParams()返回的结果类似于是 {id: ‘12’, name: ‘kk’}</p>
-<blockquote>
-<p>基本配置使用</p>
-</blockquote>
-<pre>路由这样配置时<code>path: '/user/modify/:id/:name'</code>路由里参数不可以随意添加，要和path里的一一对应</pre>
-<blockquote>
-<p>多个参数时的配置和使用</p>
-</blockquote>
-<pre><code>&#123; path: '/myUrl/:manyParams', element: myElement &#125; </code>
-使用：const params = { id: 12, name: '23'}, navigate(`/myUrl/${JSON.stringify(params)})
-获取参数：useParams().manyParams
-</pre>
-
-
       
     </div>
 
