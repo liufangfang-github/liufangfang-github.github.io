@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="d3是在svg中绘画， echarts是在Canvas中绘画svg： 1. 矢量图，放大不会失真      2. 基于XML，可以为每个元素添加js事件处理器      3. 不适合游戏应用Canvas： 1. 位图，放大会失真         2. 不支持事件处理器         3. 能够以png&#x2F;jpg格式保存图像         4. 适合游戏应用">
+    <meta name="description" content="d3是在svg中绘画， echarts是在Canvas中绘画svg： 1. 矢量图，放大不会失真      2. 基于XML，可以为每个元素添加js事件处理器      3. 不适合游戏应用Canvas： 1. 位图，放大会失真         2. 不支持事件处理器         3. 能够以png&#x2F;jpg格式保存图像         4. 适合游戏应用  text-anchor 标签的对齐方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="d3">
 <meta property="og:url" content="http://example.com/2022/06/24/d3/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="d3是在svg中绘画， echarts是在Canvas中绘画svg： 1. 矢量图，放大不会失真      2. 基于XML，可以为每个元素添加js事件处理器      3. 不适合游戏应用Canvas： 1. 位图，放大会失真         2. 不支持事件处理器         3. 能够以png&#x2F;jpg格式保存图像         4. 适合游戏应用">
+<meta property="og:description" content="d3是在svg中绘画， echarts是在Canvas中绘画svg： 1. 矢量图，放大不会失真      2. 基于XML，可以为每个元素添加js事件处理器      3. 不适合游戏应用Canvas： 1. 位图，放大会失真         2. 不支持事件处理器         3. 能够以png&#x2F;jpg格式保存图像         4. 适合游戏应用  text-anchor 标签的对齐方">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-06-24T06:47:05.000Z">
-<meta property="article:modified_time" content="2022-06-24T06:51:01.333Z">
+<meta property="article:modified_time" content="2022-07-14T07:33:05.414Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
 
@@ -188,9 +188,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-06-24 14:47:05 / Modified: 14:51:01" itemprop="dateCreated datePublished" datetime="2022-06-24T14:47:05+08:00">2022-06-24</time>
+      <time title="Created: 2022-06-24 14:47:05" itemprop="dateCreated datePublished" datetime="2022-06-24T14:47:05+08:00">2022-06-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-14 15:33:05" itemprop="dateModified" datetime="2022-07-14T15:33:05+08:00">2022-07-14</time>
     </span>
 
   
@@ -204,6 +210,37 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>d3是在svg中绘画， echarts是在Canvas中绘画<br>svg： 1. 矢量图，放大不会失真<br>      2. 基于XML，可以为每个元素添加js事件处理器<br>      3. 不适合游戏应用<br>Canvas： 1. 位图，放大会失真<br>         2. 不支持事件处理器<br>         3. 能够以png/jpg格式保存图像<br>         4. 适合游戏应用</p>
+<ul>
+<li>text-anchor <text>标签的对齐方式text-anchor=”start”时，(x,y)为<text>的起始坐标。text-anchor=”middle”时，(x,y)为<text>的中轴坐标。text-anchor=”end”时，(x,y)为<text>的结束坐标。</li>
+</ul>
+<blockquote>
+<p>渐变色</p>
+</blockquote>
+<ul>
+<li>linearGradient用来定义线性渐变色，但是必须嵌套在defs的内部</li>
+<li>d3.interpolateBlues(t)返回与blues的顺序配色方案相对应的RGB颜色字符串， t是介于0和1之间的数字。d3.interpolateBlues(0.4)</li>
+<li>d3.interpolateRgb(a, b)用于对两种颜色进行插值，通过调整伽马值返回两种颜色之前的色值。d3.interpolateRgb(“Red”, “blue”)(0.2)</li>
+</ul>
+<blockquote>
+<p>柱状图</p>
+</blockquote>
+<ul>
+<li>domain(): 输入域，range: 输出</li>
+<li>enter()输入选择占位符：当前选中的元素在DOM中可能不存在</li>
+<li>d3.scale.linear() 返回一个线性比例尺;domain() 和 range() 分别设定比例尺的定义域和值域. d3.scale.linear() 的返回值，是可以当做函数来使用的。因此，才有这样的用法：linear(0.9)<pre><code>d3.scale.linear()
+      .domain([min, max])
+      .range([0, 300]);</code></pre></li>
+<li>d3.svg.axis 创建一个axis生成器</li>
+<li>d3.range(data.length) // 返回一个数组</li>
+<li>d3.scale.ordinal - 构造一个序数比例尺；输入和输出都是离散的数据</li>
+<li>ordinal.rangeBand - 取得离散块的宽度<blockquote>
+<p>饼图</p>
+</blockquote>
+</li>
+<li>d3.layout.pie(data) - 构造一个新的默认的饼布局</li>
+<li>d3.svg.arc - 新建一个弧度生成器</li>
+<li>arc.centroid - 计算弧中心</li>
+</ul>
 
     </div>
 

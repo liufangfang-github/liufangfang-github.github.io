@@ -183,9 +183,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-06-24 14:47:05 / Modified: 14:51:01" itemprop="dateCreated datePublished" datetime="2022-06-24T14:47:05+08:00">2022-06-24</time>
+      <time title="Created: 2022-06-24 14:47:05" itemprop="dateCreated datePublished" datetime="2022-06-24T14:47:05+08:00">2022-06-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-14 15:33:05" itemprop="dateModified" datetime="2022-07-14T15:33:05+08:00">2022-07-14</time>
     </span>
 
   
@@ -199,6 +205,37 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>d3是在svg中绘画， echarts是在Canvas中绘画<br>svg： 1. 矢量图，放大不会失真<br>      2. 基于XML，可以为每个元素添加js事件处理器<br>      3. 不适合游戏应用<br>Canvas： 1. 位图，放大会失真<br>         2. 不支持事件处理器<br>         3. 能够以png/jpg格式保存图像<br>         4. 适合游戏应用</p>
+<ul>
+<li>text-anchor <text>标签的对齐方式text-anchor=”start”时，(x,y)为<text>的起始坐标。text-anchor=”middle”时，(x,y)为<text>的中轴坐标。text-anchor=”end”时，(x,y)为<text>的结束坐标。</li>
+</ul>
+<blockquote>
+<p>渐变色</p>
+</blockquote>
+<ul>
+<li>linearGradient用来定义线性渐变色，但是必须嵌套在defs的内部</li>
+<li>d3.interpolateBlues(t)返回与blues的顺序配色方案相对应的RGB颜色字符串， t是介于0和1之间的数字。d3.interpolateBlues(0.4)</li>
+<li>d3.interpolateRgb(a, b)用于对两种颜色进行插值，通过调整伽马值返回两种颜色之前的色值。d3.interpolateRgb(“Red”, “blue”)(0.2)</li>
+</ul>
+<blockquote>
+<p>柱状图</p>
+</blockquote>
+<ul>
+<li>domain(): 输入域，range: 输出</li>
+<li>enter()输入选择占位符：当前选中的元素在DOM中可能不存在</li>
+<li>d3.scale.linear() 返回一个线性比例尺;domain() 和 range() 分别设定比例尺的定义域和值域. d3.scale.linear() 的返回值，是可以当做函数来使用的。因此，才有这样的用法：linear(0.9)<pre><code>d3.scale.linear()
+      .domain([min, max])
+      .range([0, 300]);</code></pre></li>
+<li>d3.svg.axis 创建一个axis生成器</li>
+<li>d3.range(data.length) // 返回一个数组</li>
+<li>d3.scale.ordinal - 构造一个序数比例尺；输入和输出都是离散的数据</li>
+<li>ordinal.rangeBand - 取得离散块的宽度<blockquote>
+<p>饼图</p>
+</blockquote>
+</li>
+<li>d3.layout.pie(data) - 构造一个新的默认的饼布局</li>
+<li>d3.svg.arc - 新建一个弧度生成器</li>
+<li>arc.centroid - 计算弧中心</li>
+</ul>
 
       
     </div>
@@ -261,7 +298,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-06-27 15:51:03" itemprop="dateModified" datetime="2022-06-27T15:51:03+08:00">2022-06-27</time>
+      <time title="Modified: 2022-06-27 15:56:22" itemprop="dateModified" datetime="2022-06-27T15:56:22+08:00">2022-06-27</time>
     </span>
 
   
@@ -294,9 +331,12 @@ plugins: debug ? [createLogger(), vuexLocal.plugin] : []
 &#125;)</code></pre></li>
 <li>plugins一个数组，可以监听 mutation（用于外部地数据持久化、记录或调试）或者提交 mutation （用于内部数据，例如 websocket 或 某些观察者）<br>createLogger：引入日志，每次操作state中的值，都会打印数据状态，并且会区别是actions还是mutations</li>
 <li>action 异步<ul>
-<li>分发action</li>
+<li>分发action<pre><code><br>// 直接分发<br>store.dispatch('increment')<br>// 以载荷形式分发<br>store.dispatch('incrementAsync', &#123;<br>amount: 10<br>&#125;)</li>
 </ul>
 </li>
+</ul>
+<p>// 以对象形式分发<br>store.dispatch(&#123;<br>  type: ‘incrementAsync’, // 方法名字<br>  amount: 10<br>&#125;)</code></pre><br>    * </p>
+<ul>
 <li>getter store的计算属性。接受state为第一个参数，也可以接受其他 getter 作为第二个参数<br>getter可以返回一个函数，来实现getter传参<pre><code>getters: &#123;
 // ...
 getTodoById: (state) => (id) => &#123;
@@ -367,7 +407,7 @@ getTodoById: (state) => (id) => &#123;
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-05-26 14:42:32" itemprop="dateModified" datetime="2022-05-26T14:42:32+08:00">2022-05-26</time>
+      <time title="Modified: 2022-06-30 11:20:06" itemprop="dateModified" datetime="2022-06-30T11:20:06+08:00">2022-06-30</time>
     </span>
 
   
@@ -393,6 +433,7 @@ getTodoById: (state) => (id) => &#123;
       &#125;
     &#125;
   &#125;&lt;/code&gt;&lt;/pre&gt;
+  axisLine 隐藏X/Y轴
 </code></pre>
 </li>
 <li>设置网格的颜色<pre><code>splitLine: &#123;<pre><code>      show: true,

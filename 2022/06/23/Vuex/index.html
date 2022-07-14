@@ -28,7 +28,7 @@
 <meta property="og:description" content="vuex数据存储在内存中的，刷新页面会失效。 对于不变的数据vuex可以用localstorage替代，但是如果多个页面公用一套数据时，其中一个组件改变了数据，希望另一个组件响应数据的变化localstorage无法做到const vuexLocal &#x3D; new VuexPersistence(&amp;#123; storage: window.localStorage, &#x2F;&#x2F;使用localStora">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-06-23T06:59:45.000Z">
-<meta property="article:modified_time" content="2022-06-27T07:51:03.251Z">
+<meta property="article:modified_time" content="2022-06-27T07:56:22.913Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
 
@@ -196,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-06-27 15:51:03" itemprop="dateModified" datetime="2022-06-27T15:51:03+08:00">2022-06-27</time>
+      <time title="Modified: 2022-06-27 15:56:22" itemprop="dateModified" datetime="2022-06-27T15:56:22+08:00">2022-06-27</time>
     </span>
 
   
@@ -229,9 +229,12 @@ plugins: debug ? [createLogger(), vuexLocal.plugin] : []
 &#125;)</code></pre></li>
 <li>plugins一个数组，可以监听 mutation（用于外部地数据持久化、记录或调试）或者提交 mutation （用于内部数据，例如 websocket 或 某些观察者）<br>createLogger：引入日志，每次操作state中的值，都会打印数据状态，并且会区别是actions还是mutations</li>
 <li>action 异步<ul>
-<li>分发action</li>
+<li>分发action<pre><code><br>// 直接分发<br>store.dispatch('increment')<br>// 以载荷形式分发<br>store.dispatch('incrementAsync', &#123;<br>amount: 10<br>&#125;)</li>
 </ul>
 </li>
+</ul>
+<p>// 以对象形式分发<br>store.dispatch(&#123;<br>  type: ‘incrementAsync’, // 方法名字<br>  amount: 10<br>&#125;)</code></pre><br>    * </p>
+<ul>
 <li>getter store的计算属性。接受state为第一个参数，也可以接受其他 getter 作为第二个参数<br>getter可以返回一个函数，来实现getter传参<pre><code>getters: &#123;
 // ...
 getTodoById: (state) => (id) => &#123;
