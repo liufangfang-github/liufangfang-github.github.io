@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="html encode&amp;decode  var HtmlUtil &#x3D; &amp;#123;     &#x2F;*1.用浏览器内部转换器实现html转码*&#x2F;     htmlEncode:function (html)&amp;#123;         &#x2F;&#x2F;1.首先动态创建一个容器标签元素，如DIV         var temp &#x3D; document.createElement (&quot;div&quot;);">
+    <meta name="description" content="数组   数组foreach方法： 操作数据的元素是引用类型时会改变原数组，如果是值类型不会改变原数组     html encode&amp;decode  var HtmlUtil &#x3D; &amp;#123;     &#x2F;*1.用浏览器内部转换器实现html转码*&#x2F;     htmlEncode:function (html)&amp;#123;         &#x2F;&#x2F;1.首先动态创建一个容器标签元素，如DIV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js">
 <meta property="og:url" content="http://example.com/2022/02/07/js/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="html encode&amp;decode  var HtmlUtil &#x3D; &amp;#123;     &#x2F;*1.用浏览器内部转换器实现html转码*&#x2F;     htmlEncode:function (html)&amp;#123;         &#x2F;&#x2F;1.首先动态创建一个容器标签元素，如DIV         var temp &#x3D; document.createElement (&quot;div&quot;);">
+<meta property="og:description" content="数组   数组foreach方法： 操作数据的元素是引用类型时会改变原数组，如果是值类型不会改变原数组     html encode&amp;decode  var HtmlUtil &#x3D; &amp;#123;     &#x2F;*1.用浏览器内部转换器实现html转码*&#x2F;     htmlEncode:function (html)&amp;#123;         &#x2F;&#x2F;1.首先动态创建一个容器标签元素，如DIV">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-07T08:42:04.000Z">
-<meta property="article:modified_time" content="2022-06-27T08:45:25.715Z">
+<meta property="article:modified_time" content="2022-07-22T09:25:34.198Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
 
@@ -120,7 +120,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -196,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-06-27 16:45:25" itemprop="dateModified" datetime="2022-06-27T16:45:25+08:00">2022-06-27</time>
+      <time title="Modified: 2022-07-22 17:25:34" itemprop="dateModified" datetime="2022-07-22T17:25:34+08:00">2022-07-22</time>
     </span>
 
   
@@ -210,6 +210,15 @@
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>
+<p>数组</p>
+</blockquote>
+<ul>
+<li>数组foreach方法：<ul>
+<li>操作数据的元素是引用类型时会改变原数组，如果是值类型不会改变原数组</li>
+</ul>
+</li>
+</ul>
+<blockquote>
 <p>html encode&amp;decode</p>
 </blockquote>
 <pre><code>var HtmlUtil = &#123;
@@ -263,7 +272,21 @@
 </code></pre>
 
 <ul>
-<li>浏览器加载 ES6 模块，也使用<script>标签，但是要加入type="module"属性。浏览器对于带有type="module"的<script>，都是异步加载，不会造成堵塞浏览器，即等到整个页面渲染完，再执行模块脚本，等同于打开了<script>标签的defer属性。<pre><code><script type="module" src="./foo.js"></script></code></pre></li>
+<li><p>浏览器加载 ES6 模块，也使用<script>标签，但是要加入type="module"属性。浏览器对于带有type="module"的<script>，都是异步加载，不会造成堵塞浏览器，即等到整个页面渲染完，再执行模块脚本，等同于打开了<script>标签的defer属性。</p>
+<pre><code><script type="module" src="./foo.js"></script></code></pre></li>
+<li><p>奇偶数判断<pre><code>if (num & 1) console.log("奇数");<br>else console.log("偶数");  </code></pre></p>
+</li>
+<li><p>数组过滤 False 类型值<pre><code>const arr = [false, null, 0, "", undefined, NaN, 1, 2, 3]<br>const nArr = arr.filter(Boolean)  // [1,2,3]</code></pre></p>
+</li>
+<li><p>数组交集<pre><code><br>const arr1 = [1, 2, 3, 4, 5];<br>const arr2 = [2, 3, 4];</p>
+</li>
+</ul>
+<p>arr1.filter(v =&gt; arr2.includes(v));   // [2, 3, 4]<br></code></pre></p>
+<ul>
+<li>(格式化金额. tips：利用 replace 函数做正则匹配每匹配到三位数字添加一个,) [<a target="_blank" rel="noopener" href="https://juejin.cn/post/7112704104694022152]">https://juejin.cn/post/7112704104694022152]</a><pre><code>
+const num = 100010001;
+num.toString().replace(/\B(?=(\d&#123;3&#125;)+(?!\d))/g, ",");  // 100,010,001
+</code></pre></li>
 </ul>
 
     </div>
