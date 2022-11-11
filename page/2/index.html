@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,76 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/20/render/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liufangfang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端博客">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 前端博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/20/render/" class="post-title-link" itemprop="url">渲染&解析</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-04-20 15:16:09 / Modified: 15:19:14" itemprop="dateCreated datePublished" datetime="2022-04-20T15:16:09+08:00">2022-04-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>js在css之后肯定会阻塞的，因为浏览器加载css的时候不会解释js，但在解释js的时候，会并发加载css。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -335,7 +405,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-09-05 15:27:29" itemprop="dateModified" datetime="2022-09-05T15:27:29+08:00">2022-09-05</time>
+      <time title="Modified: 2022-11-11 15:25:44" itemprop="dateModified" datetime="2022-11-11T15:25:44+08:00">2022-11-11</time>
     </span>
 
   
@@ -362,6 +432,7 @@
 </ul>
 </li>
 </ul>
+<p><strong>Vue3.2 的新语法，defineProps、defineEmits、defineExpose 都不需要导入</strong></p>
 <ul>
 <li>vue3中移除了过滤器的功能<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/baifangzi/p/14156726.html?ivk_sa=1024320u">对比</a></li>
 </ul>
@@ -373,39 +444,48 @@
 <li>setup() 是在解析其它组件选项之前被调用的，所以 setup() 内部的 this 的行为与其它选项中的 this 完全不同，setup返回的数据在全局可以用this访问</li>
 </ul>
 <blockquote>
-<p>ref, reactive创建响应式变量</p>
+<p>ref, reactive创建响应式变量 <strong>深度监听</strong> </p>
 </blockquote>
 <ul>
 <li>ref一般是定义基本类型的响应式数据; 是一个函数返回是一个refs对象，对象中有一个value对象，如果要更新数据需要更改value的值，html模板中不需要.value的写法</li>
 <li>reactive创建一个porxy的代理对象。 代理对象A = reactive(目标对象B)，只有更改代理对象中的值，数据才会实时更新，更改目标对象的值不会实时更新到页面<blockquote>
+<p>属性ref用于注册或子组件的引用</p>
+</blockquote>
+</li>
+<li>使用选项式API，引用被注册在组件的this.$refs里，this.$refs是非响应式的</li>
+<li>使用组合式API，引用将存储在名字匹配（ref存储的名字与定义的相同）的ref里<pre><code><script setup><br>import &#123; ref &#125; from 'vue'<br>const p = ref()<br></script><template>
+<p ref="p">hello</p>
+</template></code></pre></li>
+</ul>
+<blockquote>
 <p>watch 监听数据的变化</p>
 </blockquote>
 <pre><code>setup(props)&#123;
-  watch(
-    // 监听引用类型
-    props.info,
-    (newV) => &#123;
-      obj = reactive(newV)
-      console.log(newV, '---watch props.info----')
-    &#125;,
-    &#123;
-      immediate: true,
-      deep: true
-    &#125;
-  )
-  // 监听基本类型
-  watch(msg,(val) => &#123;
-    console.log(val, '---watch msg ---')
-  &#125;)
-  <!-- 监听多个 其中一个发生变化都会触发 -->
-  watch([number, msg], (newVal, oldVal) => &#123;
-    console.log(&#123; newVal, oldVal &#125;)
-  &#125;)
+    watch(
+      // 监听引用类型
+      props.info,
+      (newV) => &#123;
+        obj = reactive(newV)
+        console.log(newV, '---watch props.info----')
+      &#125;,
+      &#123;
+        immediate: true,
+        deep: true
+      &#125;
+    )
+    // 监听基本类型
+    watch(msg,(val) => &#123;
+      console.log(val, '---watch msg ---')
+    &#125;)
+    <!-- 监听多个 其中一个发生变化都会触发 -->
+    watch([number, msg], (newVal, oldVal) => &#123;
+      console.log(&#123; newVal, oldVal &#125;)
+    &#125;)
 &#125;</code></pre>
 <blockquote>
 <p>watchEffect监听数据的变化</p>
 </blockquote>
-</li>
+<ul>
 <li>watchEffect会立即执行，页面首次加载就执行；watch需要添加immediate: true才会在页面首次加载执行</li>
 <li>watchEffect没有参数，获取不到原始值，代码中的依赖数据发生变化就会执行</li>
 <li>监听异步数据的变化比较合适</li>
@@ -433,6 +513,11 @@ const props = defineProps(&#123;
   &#125;
 &#125;)</code></pre></li>
 </ul>
+<p><strong>路由</strong></p>
+<blockquote>
+<p>useRoute:获取当前路由地址，相当于模板中使用的$route<br>useRouter：返回 router 实例。相当于在模板中使用 $router</p>
+</blockquote>
+<p>问题总结：<br>reactive定义的数据，赋值后页面不显示<pre><code>orderInfo = reactive(&#123;&#125;)</code></pre><br>解决方法1：在外面包一层，改为<pre><code> state: Record<string, unknown> = reactive(&#123;<br>  orderInfo: &#123;&#125;,<br>&#125;);<br>state.orderInfo = res.data.orderInfo</code></pre><br>解决方法2:改为ref</p>
 
       
     </div>
@@ -736,7 +821,7 @@ return (
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-22 17:25:34" itemprop="dateModified" datetime="2022-07-22T17:25:34+08:00">2022-07-22</time>
+      <time title="Modified: 2022-11-03 10:32:00" itemprop="dateModified" datetime="2022-11-03T10:32:00+08:00">2022-11-03</time>
     </span>
 
   
@@ -753,11 +838,12 @@ return (
 <p>数组</p>
 </blockquote>
 <ul>
-<li>数组foreach方法：<ul>
+<li><p>数组foreach方法：</p>
+<ul>
 <li>操作数据的元素是引用类型时会改变原数组，如果是值类型不会改变原数组</li>
 </ul>
 </li>
-</ul>
+<li><p>把简单类型的数组 string转为number [‘1’,’2’,’3’].map(Number)</p>
 <blockquote>
 <p>html encode&amp;decode</p>
 </blockquote>
@@ -809,9 +895,7 @@ return (
          return s; 
    &#125;
 &#125;;
-</code></pre>
-
-<ul>
+</code></pre></li>
 <li><p>浏览器加载 ES6 模块，也使用<script>标签，但是要加入type="module"属性。浏览器对于带有type="module"的<script>，都是异步加载，不会造成堵塞浏览器，即等到整个页面渲染完，再执行模块脚本，等同于打开了<script>标签的defer属性。</p>
 <pre><code><script type="module" src="./foo.js"></script></code></pre></li>
 <li><p>奇偶数判断<pre><code>if (num & 1) console.log("奇数");<br>else console.log("偶数");  </code></pre></p>

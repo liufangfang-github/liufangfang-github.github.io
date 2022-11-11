@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,93 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/07/vite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liufangfang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端博客">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 前端博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/09/07/vite/" class="post-title-link" itemprop="url">vite</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-09-07 11:49:15" itemprop="dateCreated datePublished" datetime="2022-09-07T11:49:15+08:00">2022-09-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-10-12 14:29:16" itemprop="dateModified" datetime="2022-10-12T14:29:16+08:00">2022-10-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li>run-s用于顺序，run-p用于并行; vue-tsc –noEmit 对.ts文件进行类型检查</li>
+<li>tsconfig.json 是typescript对应的编译配置文件。compilerOptions 这个配置是编译过程中一些编译的配置<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaord/p/16009131.html">vite在import.meta.env 对象上暴露环境变量。固定的环境变量有</a></p>
+</blockquote>
+</li>
+<li>import.meta.env.MODE: string类型，应用运行的模式，通过 vite –model dev 或者 vite build –model prod 指定</li>
+<li>import.meta.env.BASE_URL: string类型，由base配置项决定</li>
+<li>import.meta.env.PROD: boolean，应用是否运行在生成环境</li>
+<li>import.meta.env.DEV: boolean，应用是否运行在开发环境</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/suwanbin/p/13200521.html">mockjs</a><br>生成boolean： “sex|1-2”: true, </p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -470,7 +557,7 @@ var axis = d3.axisBottom()
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-06-27 15:56:22" itemprop="dateModified" datetime="2022-06-27T15:56:22+08:00">2022-06-27</time>
+      <time title="Modified: 2022-09-20 18:29:18" itemprop="dateModified" datetime="2022-09-20T18:29:18+08:00">2022-09-20</time>
     </span>
 
   
@@ -517,6 +604,8 @@ getTodoById: (state) => (id) => &#123;
 </code></pre></li>
 <li>mapGetters 辅助函数，将store中的函数映射到局部计算属性</li>
 </ul>
+<p>vuex4</p>
+<p>useStore获取store，需要使用key，不然获取不到数据。在html模板里可以直接使用$store.state获取数据。$store需要声明</p>
 
       
     </div>
@@ -1096,76 +1185,6 @@ export default class ProductConfigItem extends Vue &#123;
 @Prop(&#123;default()&#123;return&#123;&#125;&#125;, type: Object &#125;) attrs: any</li>
 </ul>
 <p>&#125;<br></code></pre><br><strong>注：属性的类型后面需要加上undefined 类型；或者在属性名后面加上!，表示非null 和 非undefined的断言，否则编译器会给出错误提示；</strong></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/20/render/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 前端博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/04/20/render/" class="post-title-link" itemprop="url">渲染&解析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-04-20 15:16:09 / Modified: 15:19:14" itemprop="dateCreated datePublished" datetime="2022-04-20T15:16:09+08:00">2022-04-20</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>js在css之后肯定会阻塞的，因为浏览器加载css的时候不会解释js，但在解释js的时候，会并发加载css。</p>
 
       
     </div>
