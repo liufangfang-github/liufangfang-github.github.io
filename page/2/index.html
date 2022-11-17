@@ -405,7 +405,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-11-11 15:25:44" itemprop="dateModified" datetime="2022-11-11T15:25:44+08:00">2022-11-11</time>
+      <time title="Modified: 2022-11-11 18:23:51" itemprop="dateModified" datetime="2022-11-11T18:23:51+08:00">2022-11-11</time>
     </span>
 
   
@@ -449,16 +449,22 @@
 <ul>
 <li>ref一般是定义基本类型的响应式数据; 是一个函数返回是一个refs对象，对象中有一个value对象，如果要更新数据需要更改value的值，html模板中不需要.value的写法</li>
 <li>reactive创建一个porxy的代理对象。 代理对象A = reactive(目标对象B)，只有更改代理对象中的值，数据才会实时更新，更改目标对象的值不会实时更新到页面<blockquote>
-<p>属性ref用于注册或子组件的引用</p>
+<p>shallowRef, shallowReactive 非深度监听</p>
 </blockquote>
 </li>
+<li>shallowRef 直接更改.value的值可以响应，.value.key不响应（watch监听shallowRef的数据不用.value）</li>
+</ul>
+<blockquote>
+<p>属性ref用于注册或子组件的引用</p>
+</blockquote>
+<ul>
 <li>使用选项式API，引用被注册在组件的this.$refs里，this.$refs是非响应式的</li>
 <li>使用组合式API，引用将存储在名字匹配（ref存储的名字与定义的相同）的ref里<pre><code><script setup><br>import &#123; ref &#125; from 'vue'<br>const p = ref()<br></script><template>
 <p ref="p">hello</p>
 </template></code></pre></li>
 </ul>
 <blockquote>
-<p>watch 监听数据的变化</p>
+<p>watch 监听数据的变化，<strong>监听特定的数据源</strong></p>
 </blockquote>
 <pre><code>setup(props)&#123;
     watch(
@@ -517,7 +523,12 @@ const props = defineProps(&#123;
 <blockquote>
 <p>useRoute:获取当前路由地址，相当于模板中使用的$route<br>useRouter：返回 router 实例。相当于在模板中使用 $router</p>
 </blockquote>
-<p>问题总结：<br>reactive定义的数据，赋值后页面不显示<pre><code>orderInfo = reactive(&#123;&#125;)</code></pre><br>解决方法1：在外面包一层，改为<pre><code> state: Record<string, unknown> = reactive(&#123;<br>  orderInfo: &#123;&#125;,<br>&#125;);<br>state.orderInfo = res.data.orderInfo</code></pre><br>解决方法2:改为ref</p>
+<p>问题总结：</p>
+<ol>
+<li>reactive定义的数据，赋值后页面不显示<pre><code>orderInfo = reactive(&#123;&#125;)</code></pre><br>解决方法1：在外面包一层，改为<pre><code> state: Record<string, unknown> = reactive(&#123;<br>orderInfo: &#123;&#125;,<br>&#125;);<br>state.orderInfo = res.data.orderInfo</code></pre><br>解决方法2:改为ref</li>
+<li>路由跳转时页面报错，原因是使用nutui组件dialog挂载到了#app下，页面跳转时销毁，组件自身再销毁时找不到节点</li>
+<li>使用keepalive的页面，切换路由时页面路径更改，但是页面没有重新渲染</li>
+</ol>
 
       
     </div>
