@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="[ext]：文件的后缀名，示例为’jpg’。[name]：文件名本身，示例为’login-bg’。[path]：相对于当前执行webpack命令的目录的相对路径（不含文件名本身），示例为’src&#x2F;public-resource&#x2F;imgs&#x2F;‘。这个参数我感觉用处不大，除非你想把迁移后的文件放回源文件的目录或其子目录里。[hash]：源文件内容的hash，用于缓存解决方案。 webpack是由node">
+    <meta name="description" content="webpack5[ext]：文件的后缀名，示例为’jpg’。[name]：文件名本身，示例为’login-bg’。[path]：相对于当前执行webpack命令的目录的相对路径（不含文件名本身），示例为’src&#x2F;public-resource&#x2F;imgs&#x2F;‘。这个参数我感觉用处不大，除非你想把迁移后的文件放回源文件的目录或其子目录里。[hash]：源文件内容的hash，用于缓存解决方案。 webpa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack">
 <meta property="og:url" content="http://example.com/2022/05/05/webpack/index.html">
 <meta property="og:site_name" content="前端博客">
-<meta property="og:description" content="[ext]：文件的后缀名，示例为’jpg’。[name]：文件名本身，示例为’login-bg’。[path]：相对于当前执行webpack命令的目录的相对路径（不含文件名本身），示例为’src&#x2F;public-resource&#x2F;imgs&#x2F;‘。这个参数我感觉用处不大，除非你想把迁移后的文件放回源文件的目录或其子目录里。[hash]：源文件内容的hash，用于缓存解决方案。 webpack是由node">
+<meta property="og:description" content="webpack5[ext]：文件的后缀名，示例为’jpg’。[name]：文件名本身，示例为’login-bg’。[path]：相对于当前执行webpack命令的目录的相对路径（不含文件名本身），示例为’src&#x2F;public-resource&#x2F;imgs&#x2F;‘。这个参数我感觉用处不大，除非你想把迁移后的文件放回源文件的目录或其子目录里。[hash]：源文件内容的hash，用于缓存解决方案。 webpa">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-05T02:53:13.000Z">
-<meta property="article:modified_time" content="2022-11-17T02:07:44.319Z">
+<meta property="article:modified_time" content="2023-01-10T10:01:12.694Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
 
@@ -196,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-11-17 10:07:44" itemprop="dateModified" datetime="2022-11-17T10:07:44+08:00">2022-11-17</time>
+      <time title="Modified: 2023-01-10 18:01:12" itemprop="dateModified" datetime="2023-01-10T18:01:12+08:00">2023-01-10</time>
     </span>
 
   
@@ -209,7 +209,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>[ext]：文件的后缀名，示例为’jpg’。<br>[name]：文件名本身，示例为’login-bg’。<br>[path]：相对于当前执行webpack命令的目录的相对路径（不含文件名本身），示例为’src/public-resource/imgs/‘。这个参数我感觉用处不大，除非你想把迁移后的文件放回源文件的目录或其子目录里。<br>[hash]：源文件内容的hash，用于缓存解决方案。</p>
+        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/web22050702/article/details/125541317">webpack5</a><br>[ext]：文件的后缀名，示例为’jpg’。<br>[name]：文件名本身，示例为’login-bg’。<br>[path]：相对于当前执行webpack命令的目录的相对路径（不含文件名本身），示例为’src/public-resource/imgs/‘。这个参数我感觉用处不大，除非你想把迁移后的文件放回源文件的目录或其子目录里。<br>[hash]：源文件内容的hash，用于缓存解决方案。</p>
 <p>webpack是由node写的，支持node语法</p>
 <blockquote>
 <p>loader 在打包前对文件进行处理，也就是在打包前对文件进行预处理。loader的执行书序是从下到上，从右到左</p>
@@ -326,7 +326,7 @@
 <blockquote>
 <p>热更新</p>
 </blockquote>
-<p>npm i node-sass sass-loader -D<br>npm install sass-loader node-sass –save-dev </p>
+<p>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a><br>npm i node-sass sass-loader -D<br>npm install sass-loader node-sass –save-dev </p>
 
     </div>
 
@@ -368,7 +368,7 @@
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
