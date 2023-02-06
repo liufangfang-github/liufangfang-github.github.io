@@ -405,7 +405,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-11-11 18:23:51" itemprop="dateModified" datetime="2022-11-11T18:23:51+08:00">2022-11-11</time>
+      <time title="Modified: 2023-01-11 17:24:34" itemprop="dateModified" datetime="2023-01-11T17:24:34+08:00">2023-01-11</time>
     </span>
 
   
@@ -528,6 +528,7 @@ const props = defineProps(&#123;
 <li>reactive定义的数据，赋值后页面不显示<pre><code>orderInfo = reactive(&#123;&#125;)</code></pre><br>解决方法1：在外面包一层，改为<pre><code> state: Record<string, unknown> = reactive(&#123;<br>orderInfo: &#123;&#125;,<br>&#125;);<br>state.orderInfo = res.data.orderInfo</code></pre><br>解决方法2:改为ref</li>
 <li>路由跳转时页面报错，原因是使用nutui组件dialog挂载到了#app下，页面跳转时销毁，组件自身再销毁时找不到节点</li>
 <li>使用keepalive的页面，切换路由时页面路径更改，但是页面没有重新渲染</li>
+<li><img src="../../assets//img/webpack5.jpg" alt="Cannot find module &#39;fs/promises&#39;"><br> 原因：node版本太低，要用14以上（我用的是16解决了）</li>
 </ol>
 
       

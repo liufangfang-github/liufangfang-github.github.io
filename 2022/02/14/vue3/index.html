@@ -27,10 +27,12 @@
 <meta property="og:site_name" content="前端博客">
 <meta property="og:description" content="vue2 VS vue3响应式   vue2 vue3 Proxy reflect Reflect 是一个内置的对象，它提供拦截 JavaScript 操作的方法。这些方法与proxy handlers (en-US)的方法相同。Reflect不是一个函数对象，因此它是不可构造的。 效率提高 defineComponent 定义一个组件，最主要的功能是为了 ts 下的类型推到      Vue3">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2022/02/assets//img/webpack5.jpg">
 <meta property="article:published_time" content="2022-02-14T07:39:03.000Z">
-<meta property="article:modified_time" content="2022-11-11T10:23:51.721Z">
+<meta property="article:modified_time" content="2023-01-11T09:24:34.998Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/02/assets//img/webpack5.jpg">
 
 
 <link rel="canonical" href="http://example.com/2022/02/14/vue3/">
@@ -196,7 +198,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-11-11 18:23:51" itemprop="dateModified" datetime="2022-11-11T18:23:51+08:00">2022-11-11</time>
+      <time title="Modified: 2023-01-11 17:24:34" itemprop="dateModified" datetime="2023-01-11T17:24:34+08:00">2023-01-11</time>
     </span>
 
   
@@ -319,6 +321,7 @@ const props = defineProps(&#123;
 <li>reactive定义的数据，赋值后页面不显示<pre><code>orderInfo = reactive(&#123;&#125;)</code></pre><br>解决方法1：在外面包一层，改为<pre><code> state: Record<string, unknown> = reactive(&#123;<br>orderInfo: &#123;&#125;,<br>&#125;);<br>state.orderInfo = res.data.orderInfo</code></pre><br>解决方法2:改为ref</li>
 <li>路由跳转时页面报错，原因是使用nutui组件dialog挂载到了#app下，页面跳转时销毁，组件自身再销毁时找不到节点</li>
 <li>使用keepalive的页面，切换路由时页面路径更改，但是页面没有重新渲染</li>
+<li><img src="../../assets//img/webpack5.jpg" alt="Cannot find module &#39;fs/promises&#39;"><br> 原因：node版本太低，要用14以上（我用的是16解决了）</li>
 </ol>
 
     </div>
