@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,96 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/22/typescript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liufangfang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端博客">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 前端博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/22/typescript/" class="post-title-link" itemprop="url">typescript</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-04-22 14:38:34" itemprop="dateCreated datePublished" datetime="2022-04-22T14:38:34+08:00">2022-04-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-21 18:31:22" itemprop="dateModified" datetime="2022-06-21T18:31:22+08:00">2022-06-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>@Prop装饰器接受一个参数，这一个有三种写法。@Prop(options: (PropOptions | Constructor[] | Constructor) = {})</p>
+</blockquote>
+<ul>
+<li>PropOptions ，包含以下选项：type(类型), required(必填), default(默认值), validator(验证函数)</li>
+<li>Constructor[]， 指定prop的可选类型；</li>
+<li>Constructor，如String，Number，Boolean，Array，Object，Date，Function，Symbol或自定义函数类型等，指定prop的类型<br>如下面的例子<pre><code>
+import &#123; Component, Vue, Prop &#125; from 'vue-property-decorator'
+@Component
+export default class ProductConfigItem extends Vue &#123;
+@Prop(&#123; type:String, default: '1'&#125;) tabType: String| undefined
+@Prop(Number) readonly propA: number | undefined
+@Prop(&#123;default()&#123;return&#123;&#125;&#125;, type: Object &#125;) attrs: any</li>
+</ul>
+<p>&#125;<br></code></pre><br><strong>注：属性的类型后面需要加上undefined 类型；或者在属性名后面加上!，表示非null 和 非undefined的断言，否则编译器会给出错误提示；</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -405,7 +495,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-01-11 17:24:34" itemprop="dateModified" datetime="2023-01-11T17:24:34+08:00">2023-01-11</time>
+      <time title="Modified: 2023-03-17 16:18:00" itemprop="dateModified" datetime="2023-03-17T16:18:00+08:00">2023-03-17</time>
     </span>
 
   
@@ -426,7 +516,7 @@
 <li>vue3 Proxy reflect<ul>
 <li>Reflect 是一个内置的对象，它提供拦截 JavaScript 操作的方法。这些方法与proxy handlers (en-US)的方法相同。Reflect不是一个函数对象，因此它是不可构造的。</li>
 <li>效率提高<blockquote>
-<p>defineComponent 定义一个组件，最主要的功能是为了 ts 下的类型推到</p>
+<p>vm.$data是实际的代理对象，更改$data里面的数据等价于直接更改数据，可以通过$data动态的添加响应式的数据<br>defineComponent 定义一个组件，最主要的功能是为了 ts 下的类型推到</p>
 </blockquote>
 </li>
 </ul>
@@ -521,7 +611,7 @@ const props = defineProps(&#123;
 </ul>
 <p><strong>路由</strong></p>
 <blockquote>
-<p>useRoute:获取当前路由地址，相当于模板中使用的$route<br>useRouter：返回 router 实例。相当于在模板中使用 $router</p>
+<p>vue3不再使用new Router()创建router，使用createRouter<br>useRoute:获取当前路由地址，相当于模板中使用的$route<br>useRouter：返回 router 实例。相当于在模板中使用 $router</p>
 </blockquote>
 <p>问题总结：</p>
 <ol>
@@ -529,6 +619,7 @@ const props = defineProps(&#123;
 <li>路由跳转时页面报错，原因是使用nutui组件dialog挂载到了#app下，页面跳转时销毁，组件自身再销毁时找不到节点</li>
 <li>使用keepalive的页面，切换路由时页面路径更改，但是页面没有重新渲染</li>
 <li><img src="../../assets//img/webpack5.jpg" alt="Cannot find module &#39;fs/promises&#39;"><br> 原因：node版本太低，要用14以上（我用的是16解决了）</li>
+<li>getCurrentInstance只能在setup或生命周期钩子中使用,在外部使用getCurrentInstance()返回null</li>
 </ol>
 
       
@@ -1147,124 +1238,8 @@ useEffect(() => &#123;
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/07/vue/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 前端博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/07/vue/" class="post-title-link" itemprop="url">vue</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-02-07 16:22:54" itemprop="dateCreated datePublished" datetime="2022-02-07T16:22:54+08:00">2022-02-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-08 16:20:40" itemprop="dateModified" datetime="2022-04-08T16:20:40+08:00">2022-04-08</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>补充ing</p>
-<!-- = （最高阶标题）
-
-# vue（h1）
-<blockquotes>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</blockquotes>
-## vue-router (h2)
-* libiao
-- red
-+ blue
-<p>
-1. green
-
-</p> -->
-<ul>
-<li>.$mount(element) 手动挂载实例<pre><code>$mount('#app')</code>会整个替换#app</pre></li>
-<li>render循坏生成一个list<pre>
-<code>render: (h, params) => &#123;
-let group = []
-let channellist = res.data.list
-for (let i = 0; i < channellist.length; i++) &#123;
-  group.push(h('div',
-  <!-- 属性props -->
-    &#123;
-      class: 'channel-list',
-      on: &#123;
-        click: () => &#123;
-          self.copy(channellist[i].url)
-        &#125;
-      &#125;
-    &#125;,
-    [
-      <!-- children -->
-      h('span', channellist[i].name),
-      h('span', ` : `),
-      h('span', channellist[i].url)
-    ]));
-&#125;
-return h('div', group)
-&#125;</code>
-</pre></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 </div>
