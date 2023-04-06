@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/02/assets//img/webpack5.jpg">
 <meta property="article:published_time" content="2022-02-14T07:39:03.000Z">
-<meta property="article:modified_time" content="2023-03-17T08:18:00.684Z">
+<meta property="article:modified_time" content="2023-04-06T08:39:51.032Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/02/assets//img/webpack5.jpg">
@@ -198,7 +198,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-03-17 16:18:00" itemprop="dateModified" datetime="2023-03-17T16:18:00+08:00">2023-03-17</time>
+      <time title="Modified: 2023-04-06 16:39:51" itemprop="dateModified" datetime="2023-04-06T16:39:51+08:00">2023-04-06</time>
     </span>
 
   
@@ -312,6 +312,16 @@ const props = defineProps(&#123;
   &#125;
 &#125;)</code></pre></li>
 </ul>
+<blockquote>
+<p> 自动透传属性：1.单根组件会自动透传，多根组件不会自动透传。2. defineProps接受的属性不会透传. $attrs会接受所有的属性，包含透传和不透传的.<br>useAttrs():获取透传的属性和方法，不透传的获取不到，即defineProps接受的属性获取不到。<br>禁止透传可以设置<br><code><pre><script><br>export default &#123;<br>  inheritAttrs: false<br>&#125;<br></script></pre></code></p>
+</blockquote>
+<blockquote>
+<p>依赖注入 </p>
+</blockquote>
+<ol>
+<li>一定是嵌套组件，如父子组件，兄弟组件依赖注入无效</li>
+<li>依赖注入是响应式的<code><pre>let name = ref('qqqqq');provide('name', name)<br>// provide('name', name.value) //无效注入,对应的值，不用加.value,否则不响应</pre></code></li>
+</ol>
 <p><strong>路由</strong></p>
 <blockquote>
 <p>vue3不再使用new Router()创建router，使用createRouter<br>useRoute:获取当前路由地址，相当于模板中使用的$route<br>useRouter：返回 router 实例。相当于在模板中使用 $router</p>

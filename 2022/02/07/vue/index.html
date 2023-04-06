@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="补充ing   .$mount(element) 手动挂载实例$mount(&#39;#app&#39;)会整个替换#app render循坏生成一个list render: (h, params) &#x3D;&gt; &amp;#123; let group &#x3D; [] let channellist &#x3D; res.data.list for (let i &#x3D; 0; i &lt; channellist.length; i++) &amp;#123;">
+    <meta name="description" content="补充ing   .$mount(element) 手动挂载实例 $mount(&#39;#app&#39;)会整个替换#app render循坏生成一个list  render: (h, params) &#x3D;&gt; &amp;#123; let group &#x3D; [] let channellist &#x3D; res.data.list for (let i &#x3D; 0; i &lt; channellist.length; i++) &amp;#12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue">
 <meta property="og:url" content="http://example.com/2022/02/07/vue/index.html">
 <meta property="og:site_name" content="技术博客">
-<meta property="og:description" content="补充ing   .$mount(element) 手动挂载实例$mount(&#39;#app&#39;)会整个替换#app render循坏生成一个list render: (h, params) &#x3D;&gt; &amp;#123; let group &#x3D; [] let channellist &#x3D; res.data.list for (let i &#x3D; 0; i &lt; channellist.length; i++) &amp;#123;">
+<meta property="og:description" content="补充ing   .$mount(element) 手动挂载实例 $mount(&#39;#app&#39;)会整个替换#app render循坏生成一个list  render: (h, params) &#x3D;&gt; &amp;#123; let group &#x3D; [] let channellist &#x3D; res.data.list for (let i &#x3D; 0; i &lt; channellist.length; i++) &amp;#12">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-07T08:22:54.000Z">
-<meta property="article:modified_time" content="2022-04-08T08:20:40.271Z">
+<meta property="article:modified_time" content="2023-04-04T09:46:33.158Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
 
@@ -196,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-08 16:20:40" itemprop="dateModified" datetime="2022-04-08T16:20:40+08:00">2022-04-08</time>
+      <time title="Modified: 2023-04-04 17:46:33" itemprop="dateModified" datetime="2023-04-04T17:46:33+08:00">2023-04-04</time>
     </span>
 
   
@@ -223,8 +223,10 @@
 
 </p> -->
 <ul>
-<li>.$mount(element) 手动挂载实例<pre><code>$mount('#app')</code>会整个替换#app</pre></li>
-<li>render循坏生成一个list<pre>
+<li><p>.$mount(element) 手动挂载实例</p>
+<pre><code>$mount('#app')</code>会整个替换#app</pre></li>
+<li><p>render循坏生成一个list</p>
+<pre>
 <code>render: (h, params) => &#123;
 let group = []
 let channellist = res.data.list
@@ -249,6 +251,8 @@ for (let i = 0; i < channellist.length; i++) &#123;
 return h('div', group)
 &#125;</code>
 </pre></li>
+<li><p>v-html 将表达式的值作为元素的innerHTML插入，有xss攻击的风险，使用时确保内容的安全性</p>
+</li>
 </ul>
 
     </div>
@@ -265,8 +269,8 @@ return h('div', group)
             <div class="post-nav-item">
             </div>
             <div class="post-nav-item">
-                <a href="/2022/02/07/react-router/" rel="next" title="react路由">
-                  react路由 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/02/07/react-hook/" rel="next" title="react-hook">
+                  react-hook <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

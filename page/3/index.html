@@ -191,7 +191,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-08 16:20:40" itemprop="dateModified" datetime="2022-04-08T16:20:40+08:00">2022-04-08</time>
+      <time title="Modified: 2023-04-04 17:46:33" itemprop="dateModified" datetime="2023-04-04T17:46:33+08:00">2023-04-04</time>
     </span>
 
   
@@ -218,8 +218,10 @@
 
 </p> -->
 <ul>
-<li>.$mount(element) 手动挂载实例<pre><code>$mount('#app')</code>会整个替换#app</pre></li>
-<li>render循坏生成一个list<pre>
+<li><p>.$mount(element) 手动挂载实例</p>
+<pre><code>$mount('#app')</code>会整个替换#app</pre></li>
+<li><p>render循坏生成一个list</p>
+<pre>
 <code>render: (h, params) => &#123;
 let group = []
 let channellist = res.data.list
@@ -244,6 +246,8 @@ for (let i = 0; i < channellist.length; i++) &#123;
 return h('div', group)
 &#125;</code>
 </pre></li>
+<li><p>v-html 将表达式的值作为元素的innerHTML插入，有xss攻击的风险，使用时确保内容的安全性</p>
+</li>
 </ul>
 
       
