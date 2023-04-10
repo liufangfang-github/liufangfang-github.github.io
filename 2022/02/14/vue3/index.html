@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/02/assets//img/webpack5.jpg">
 <meta property="article:published_time" content="2022-02-14T07:39:03.000Z">
-<meta property="article:modified_time" content="2023-04-06T08:39:51.032Z">
+<meta property="article:modified_time" content="2023-04-10T06:20:27.514Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/02/assets//img/webpack5.jpg">
@@ -198,7 +198,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-06 16:39:51" itemprop="dateModified" datetime="2023-04-06T16:39:51+08:00">2023-04-06</time>
+      <time title="Modified: 2023-04-10 14:20:27" itemprop="dateModified" datetime="2023-04-10T14:20:27+08:00">2023-04-10</time>
     </span>
 
   
@@ -285,8 +285,9 @@
 <p>watchEffect监听数据的变化</p>
 </blockquote>
 <ul>
-<li>watchEffect会立即执行，页面首次加载就执行；watch需要添加immediate: true才会在页面首次加载执行</li>
+<li>watchEffect会立即执行，页面首次加载就执行一次；watch需要添加immediate: true才会在页面首次加载执行</li>
 <li>watchEffect没有参数，获取不到原始值，代码中的依赖数据发生变化就会执行</li>
+<li>watchEffect监听reactive定义的值person = {name: ‘aa’, age: 12}，首次加载时会执行一次，后续更改(person.age++)值没有响应;watchEffect 能响应单一的值</li>
 <li>监听异步数据的变化比较合适</li>
 <li>也可以监听多个数据,user.name或msg发生变化都会触发<pre><code>watchEffect(() => &#123;<br>console.log(user.name, '----监听到user.name变化了')<br>console.log(msg.value, '----监听到msg变化了')<br>&#125;)</code></pre></li>
 </ul>
@@ -310,11 +311,12 @@ const props = defineProps(&#123;
     type: Object,
     required: true // 如果接受的数据为空，会有警告提示
   &#125;
-&#125;)</code></pre></li>
-</ul>
+&#125;)</code></pre>
 <blockquote>
-<p> 自动透传属性：1.单根组件会自动透传，多根组件不会自动透传。2. defineProps接受的属性不会透传. $attrs会接受所有的属性，包含透传和不透传的.<br>useAttrs():获取透传的属性和方法，不透传的获取不到，即defineProps接受的属性获取不到。<br>禁止透传可以设置<br><code><pre><script><br>export default &#123;<br>  inheritAttrs: false<br>&#125;<br></script></pre></code></p>
+<p>readonly 让一个响应式数据变为只读的<br> 自动透传属性：1.单根组件会自动透传，多根组件不会自动透传。2. defineProps接受的属性不会透传. $attrs会接受所有的属性，包含透传和不透传的.<br>useAttrs():获取透传的属性和方法，不透传的获取不到，即defineProps接受的属性获取不到。<br>禁止透传可以设置<br><code><pre><script><br>export default &#123;<br>inheritAttrs: false<br>&#125;<br></script></pre></code></p>
 </blockquote>
+</li>
+</ul>
 <blockquote>
 <p>依赖注入 </p>
 </blockquote>
