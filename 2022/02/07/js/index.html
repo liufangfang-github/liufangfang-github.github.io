@@ -28,7 +28,7 @@
 <meta property="og:description" content="数组   数组foreach方法：  操作数据的元素是引用类型时会改变原数组，如果是值类型不会改变原数组   把简单类型的数组 string转为number [‘1’,’2’,’3’].map(Number)  html encode&amp;decode  var HtmlUtil &#x3D; &amp;#123;     &#x2F;*1.用浏览器内部转换器实现html转码*&#x2F;     htmlEncode:func">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-07T08:42:04.000Z">
-<meta property="article:modified_time" content="2022-11-03T02:32:00.659Z">
+<meta property="article:modified_time" content="2023-04-18T08:22:06.692Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
 
@@ -196,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-11-03 10:32:00" itemprop="dateModified" datetime="2022-11-03T10:32:00+08:00">2022-11-03</time>
+      <time title="Modified: 2023-04-18 16:22:06" itemprop="dateModified" datetime="2023-04-18T16:22:06+08:00">2023-04-18</time>
     </span>
 
   
@@ -286,6 +286,16 @@
 const num = 100010001;
 num.toString().replace(/\B(?=(\d&#123;3&#125;)+(?!\d))/g, ",");  // 100,010,001
 </code></pre></li>
+</ul>
+<blockquote>
+<p>IntersectionObserver：判断元素是否出现在视图窗口let io = new IntersectionObserver(callback, options)</p>
+</blockquote>
+<ul>
+<li>callback可见性变化时的回调函数</li>
+<li>option配置对象（可选参数）</li>
+<li>io.observe(元素) 开始观察</li>
+<li>io.unobserve(element);// 停止观察</li>
+<li>io.disconnect(); // 关闭观察器</li>
 </ul>
 
     </div>

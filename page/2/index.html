@@ -495,7 +495,7 @@ export default class ProductConfigItem extends Vue &#123;
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-10 14:20:27" itemprop="dateModified" datetime="2023-04-10T14:20:27+08:00">2023-04-10</time>
+      <time title="Modified: 2023-04-10 17:25:49" itemprop="dateModified" datetime="2023-04-10T17:25:49+08:00">2023-04-10</time>
     </span>
 
   
@@ -619,7 +619,7 @@ const props = defineProps(&#123;
 </blockquote>
 <ol>
 <li>一定是嵌套组件，如父子组件，兄弟组件依赖注入无效</li>
-<li>依赖注入是响应式的<code><pre>let name = ref('qqqqq');provide('name', name)<br>// provide('name', name.value) //无效注入,对应的值，不用加.value,否则不响应</pre></code></li>
+<li>依赖注入是响应式的，inject 方法会自动处理响应式数据，可以直接将其用作模板中的数据，无需使用 .value 进行取值<code><pre>let name = ref('qqqqq');provide('name', name)<br>// provide('name', name.value) //无效注入,对应的值，不用加.value,否则不响应</pre></code></li>
 </ol>
 <p><strong>路由</strong></p>
 <blockquote>
@@ -936,7 +936,7 @@ return (
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-11-03 10:32:00" itemprop="dateModified" datetime="2022-11-03T10:32:00+08:00">2022-11-03</time>
+      <time title="Modified: 2023-04-18 16:22:06" itemprop="dateModified" datetime="2023-04-18T16:22:06+08:00">2023-04-18</time>
     </span>
 
   
@@ -1026,6 +1026,16 @@ return (
 const num = 100010001;
 num.toString().replace(/\B(?=(\d&#123;3&#125;)+(?!\d))/g, ",");  // 100,010,001
 </code></pre></li>
+</ul>
+<blockquote>
+<p>IntersectionObserver：判断元素是否出现在视图窗口let io = new IntersectionObserver(callback, options)</p>
+</blockquote>
+<ul>
+<li>callback可见性变化时的回调函数</li>
+<li>option配置对象（可选参数）</li>
+<li>io.observe(元素) 开始观察</li>
+<li>io.unobserve(element);// 停止观察</li>
+<li>io.disconnect(); // 关闭观察器</li>
 </ul>
 
       
