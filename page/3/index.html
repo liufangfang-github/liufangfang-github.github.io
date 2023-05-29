@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,97 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/07/react-router/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liufangfang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术博客">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 技术博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/07/react-router/" class="post-title-link" itemprop="url">react路由</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-02-07 16:37:07" itemprop="dateCreated datePublished" datetime="2022-02-07T16:37:07+08:00">2022-02-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-02-08 18:57:56" itemprop="dateModified" datetime="2022-02-08T18:57:56+08:00">2022-02-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p><a target="_blank" rel="noopener" href="https://react-guide.github.io/react-router-cn/docs/API.html#route">路由文档</a><br><a target="_blank" rel="noopener" href="https://v5.reactrouter.com/web/api/Hooks/uselocation">路由API</a></p>
+<h2 id="query"><a href="#query" class="headerlink" title="query"></a>query</h2><p><strong>从 v4 开始，删除了 this.props.location.query 对象。删除它的主要原因是允许开发人员创建独特的方式来存储 query 字符串</strong><br><a target="_blank" rel="noopener" href="https://www.delftstack.com/zh/howto/react/force-rerender-in-react/">参考文档</a><br>函数组建中获取query使用useLocation() 钩子的实例，钩子不返回解析的query对象，需要解析钩子的实例一获取key/value对参数，<br><strong>query-string</strong> 库可以解析query对象</p>
+<pre><code>const queryToStr = require('query-string'); const result = queryToStr.parse(useLocation().search);</code></pre>
+<h2 id="params"><a href="#params" class="headerlink" title="params"></a>params</h2><p>useParams返回一个包含key/value的对象。useParams()返回的结果类似于是 {id: ‘12’, name: ‘kk’}</p>
+<blockquote>
+<p>基本配置使用</p>
+</blockquote>
+<pre>路由这样配置时<code>path: '/user/modify/:id/:name'</code>路由里参数不可以随意添加，要和path里的一一对应</pre>
+<blockquote>
+<p>多个参数时的配置和使用</p>
+</blockquote>
+<pre><code>&#123; path: '/myUrl/:manyParams', element: myElement &#125; </code>
+使用：const params = { id: 12, name: '23'}, navigate(`/myUrl/${JSON.stringify(params)})
+获取参数：useParams().manyParams
+</pre>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 

@@ -116,7 +116,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -146,6 +146,91 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/21/canvas/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="liufangfang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术博客">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 技术博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/21/canvas/" class="post-title-link" itemprop="url">canvas</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-04-21 10:39:00" itemprop="dateCreated datePublished" datetime="2023-04-21T10:39:00+08:00">2023-04-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-24 10:32:14" itemprop="dateModified" datetime="2023-04-24T10:32:14+08:00">2023-04-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li>创建画布 canvas = document.createElement(‘canvas)</li>
+<li>获取画笔 ctx = canvas.getContext(‘2d’)</li>
+<li>绘画图形</li>
+<li>填充自定义图形时，要先定义颜色ctx.fillStyle = ‘red’，绘制结束后要调用ctx.fill(),否则颜色失败，一定要绘制结束后再调用</li>
+<li>绘制圆弧 ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);<ul>
+<li>x：圆弧中心在x轴的坐标，y：圆弧中心在Y轴的坐标，radius：圆弧半径，startAngle圆弧的起始点， endAngle：圆弧的终点</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -975,213 +1060,6 @@ getTodoById: (state) => (id) => &#123;
 <li>system: SystemJS加载器格式</li>
 <li><em>当format类型为iife或者umd格式的时候需要配置output.globals选项参数以提供全局变量名来替换外部导入</em>*</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/05/webpack/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/05/webpack/" class="post-title-link" itemprop="url">webpack</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-05-05 10:53:13" itemprop="dateCreated datePublished" datetime="2022-05-05T10:53:13+08:00">2022-05-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-10 17:12:13" itemprop="dateModified" datetime="2023-04-10T17:12:13+08:00">2023-04-10</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/web22050702/article/details/125541317">webpack5</a><br>[ext]：文件的后缀名，示例为’jpg’。<br>[name]：文件名本身，示例为’login-bg’。<br>[path]：相对于当前执行webpack命令的目录的相对路径（不含文件名本身），示例为’src/public-resource/imgs/‘。这个参数我感觉用处不大，除非你想把迁移后的文件放回源文件的目录或其子目录里。<br>[hash]：源文件内容的hash，用于缓存解决方案。</p>
-<p>webpack是由node写的，支持node语法</p>
-<blockquote>
-<p>loader 在打包前对文件进行处理，也就是在打包前对文件进行预处理。loader的执行书序是从下到上，从右到左</p>
-</blockquote>
-<ul>
-<li>css-loader处理.css样式文件的内容</li>
-<li>style-loader 把js中import导入的样式文件打包到js中，运行js时，将样式文件自动插入到&lt;style&gt;标签中</li>
-<li>mini-css-extract-plugin把js中import的样式文件，单独打包成一个样式文件，结合html-webpack-plugin，以link的形式插入到html文件中。</li>
-<li><em>此插件不支持HMR(热更新Hot Module Replacement)，若修改了样式文件，是不能即时在浏览器中显示出来的，需要手动刷新页面</em>* 可以自己手动热更新<br>所以 style-loader 和 mini-css-extract-plugin不用一起使用</li>
-<li>autoprefixer添加上不生效的问题，需要在package.json 里 ( 与 devDependencies 同级 ) ，设置支持哪些浏览器，必须设置支持的浏览器才会自动添加浏览器兼容<pre><code>"browserslist": [<br>  "> 1%",<br>  "last 2 versions",<br>  "not ie <= 8",<br>  "android >= 2"<br>]</code></pre><br><br>也可以在postcss.config.js文件里设置浏览器支持<per><code>plugins: [ require('autoprefixer') (&#123;<br>  browsers: [ "> 1%", "last 2 versions"]<br>&#125;)]</code></per><ul>
-<li>webpack4内置了uglifyjs-webpack-plugin这个插件，mode：production时会自动调用组件压缩js。配置了optimization后，即使配置了mode：production。也不会压缩js文件，因为配置了optimization.minimizer就表示开发者自定义压缩组件</li>
-</ul>
-</li>
-</ul>
-<p><strong>loader的类型</strong></p>
-<ul>
-<li><p>pre前面执行的loader</p>
-</li>
-<li><p>normal 普通的laoder</p>
-</li>
-<li><p>内联的</p>
-</li>
-<li><p>后置的</p>
-</li>
-<li><p>style-resources-loader 作用就是避免重复在每个样式文件中@import导入，在各个css 文件中能够直接使用 变量和公共的样式。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaolinlife/article/details/113771595">参考</a></p>
-<blockquote>
-<p>plugins 插件</p>
-</blockquote>
-<ul>
-<li><p>copy-webpack-plugin：复制文件</p>
-<pre><code>new CopyWebpackPlugin(&#123;
-  patterns: [
-    &#123; from: "doc", to: "./" &#125;
-  ],
-&#125;)</code></pre></li>
-<li><p>IgnorePlugin: Exclude certain modules from bundles,从包中排除某些模块，可以减少打包后的文件体积，new webpack.IgnorePlugin(requestRegExp, [contextRegExp])</p>
-<pre><code>new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/) // 打包时忽略moment本地化内容</code></pre></li>
-<li><p>SplitChunksPlugin前身是CommonsChunkPlugin，webpack4之前使用CommonsChunkPlugin。做代码切割：允许把代码拆分到多个文件中，可以缓存代码块<br>* </p>
-</li>
-</ul>
-<blockquote>
-<p>babel处理js，简单的说就是把ES6的代码转译成ES5</p>
-</blockquote>
-<blockquote>
-<p>模块 module</p>
-</blockquote>
-<ul>
-<li>noParse 防止webpack解析任何与正则表达式相匹配的文件<pre><code>noParse: /jquery|lodash/<br>// 从 webpack 3.0.0 开始<br>noParse: function(content) &#123;<br>return /jquery|lodash/.test(content);<br>&#125;<br></code></pre></li>
-</ul>
-<blockquote>
-<p>webpack打包图片</p>
-</blockquote>
-<ul>
-<li><p>js中创建图片引入</p>
-</li>
-<li><p>css中background引入</p>
-</li>
-<li><p>&lt;img src=’’&gt;</p>
-</li>
-<li><p>file-loader：打包文件放在build目录下</p>
-</li>
-<li><p>url-loader：把图片打包成base64，减少http请求</p>
-</li>
-<li><p><em>url-loader和file-loader同时引用时会导致图片不展示，可以在url-loader的fallback中引用file-loader</em>*</p>
-<pre><code>&#123;
- test: /.(png|jpg|gif)$/,
- use:&#123;
-   loader: 'url-loader',
-   options: &#123;
-     limit: 20,
-     fallback: &#123;
-       loader: 'file-loader',
-       options: &#123;
-         name: 'img/[name].[ext]?t=[hash:7]'
-       &#125;
-     &#125;
-   &#125;
- &#125;
-&#125;</code></pre></li>
-</ul>
-<blockquote>
-<p>devtool 映射文件，辅助源码调试</p>
-</blockquote>
-<ul>
-<li>source-map: 会单独打包出一个js.map文件</li>
-<li>eval-source-map</li>
-<li>cheap-module-source-map: 不会单独构建.map文件，可以定位报错代码的位置</li>
-<li>cheap-module-eval-source-map</li>
-</ul>
-<blockquote>
-<p>resolve解析</p>
-</blockquote>
-<ul>
-<li>alias 别名<pre><code>配置：<br>alias: &#123;<br>  "@": path.resolve(__dirname, './src')<br>&#125;<br>使用：<br>background: url('@/assets/img/2.jpg');</code></pre></li>
-<li>extensions 自动解析的扩展。默认extensions: [“.js”, “.json”]，即：名字&amp;路径相同时先引入js文件</li>
-<li>mainFields 当从<strong>npm包</strong>中导入模块时。决定在package.json中使用那个字段导入模块，</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p> tree shaking本质是借助 ES module 的静态分析能力来消除无用的 js 代码的（用于清除代码中未引用的部分），是基于es6的，es6的语法在浏览器是不被识别的</p>
-</blockquote>
-<ul>
-<li>坑！想看代码是否生效，把js压缩代码关掉了，导致tree shaking不生效。webpack的tree shaking默认只在使用mode: “production”时起作用，但是如果配置去掉压缩代码的配置，webpack会默认不是“production”，然后就没开启tree shaking</li>
-<li>只导入没使用，也会被消除掉</li>
-</ul>
-<blockquote>
-<p>懒加载 没使用@babel/plugin-syntax-dynamic-import也可以？</p>
-</blockquote>
-<pre><code>import('./lazy.js').then(res => &#123;
-    console.log(res.default)
-  &#125;)</code></pre>
-
-<blockquote>
-<p>热更新<br>new webpack.HotModuleReplacementPlugin() // 每次更改代码后会自动刷新页面</p>
-</blockquote>
-<p>postcss-plugin-px2rem配置加在postcss-loader配置上。自己单独配置postcss.config.js也不行</p>
-<blockquote>
-<p>webpack5更改</p>
-</blockquote>
-<ul>
-<li>webpack5移除 devServer.quiet：除了初始启动信息之外的任何信息都不会被打印到控制台，警告报错信息在控制台也不看不见</li>
-<li>webpack5移除 devServer.before<br>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a><br>npm i node-sass sass-loader -D<br>npm install sass-loader node-sass –save-dev </li>
-</ul>
-<ul>
-<li>PhantomJS 报错，解决方法：用node&gt; 14 install</li>
-</ul>
-<p><strong>webpack5配置</strong></p>
-<blockquote>
-<p>webpack5分离js和css的插件mini-css-extract-plugin。5之前css是通过style-loader放置到页面的标签里的，现在单独抽出css，style-loader就无效了，mini-css-extract-plugin 插件中的loader会替代style-loader。配置时不需要用style-loader，否则样式会丢失。mini-css-extract-plugin处理后的css文件没有被压缩，需要单独使用css-minimizer-webpack-plugin进行压缩处理[<a target="_blank" rel="noopener" href="https://juejin.cn/post/7133599942358073358]">https://juejin.cn/post/7133599942358073358]</a></p>
-</blockquote>
 
       
     </div>
