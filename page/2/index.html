@@ -191,7 +191,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-10 17:12:13" itemprop="dateModified" datetime="2023-04-10T17:12:13+08:00">2023-04-10</time>
+      <time title="Modified: 2023-07-10 15:32:02" itemprop="dateModified" datetime="2023-07-10T15:32:02+08:00">2023-07-10</time>
     </span>
 
   
@@ -246,10 +246,7 @@
 </li>
 </ul>
 <blockquote>
-<p>babel处理js，简单的说就是把ES6的代码转译成ES5</p>
-</blockquote>
-<blockquote>
-<p>模块 module</p>
+<p>babel处理js，简单的说就是把ES6的代码转译成ES5<br>  将高版本语法转位低版本语法<br>模块 module</p>
 </blockquote>
 <ul>
 <li>noParse 防止webpack解析任何与正则表达式相匹配的文件<pre><code>noParse: /jquery|lodash/<br>// 从 webpack 3.0.0 开始<br>noParse: function(content) &#123;<br>return /jquery|lodash/.test(content);<br>&#125;<br></code></pre></li>
@@ -336,6 +333,29 @@
 <blockquote>
 <p>webpack5分离js和css的插件mini-css-extract-plugin。5之前css是通过style-loader放置到页面的标签里的，现在单独抽出css，style-loader就无效了，mini-css-extract-plugin 插件中的loader会替代style-loader。配置时不需要用style-loader，否则样式会丢失。mini-css-extract-plugin处理后的css文件没有被压缩，需要单独使用css-minimizer-webpack-plugin进行压缩处理[<a target="_blank" rel="noopener" href="https://juejin.cn/post/7133599942358073358]">https://juejin.cn/post/7133599942358073358]</a></p>
 </blockquote>
+<blockquote>
+<p>配置后 build发现打包后的js文件名称都是数字，而不是模块的名字？<br>路由文件导入模块时按需导入，打包后的文件名就会是模块名</p>
+</blockquote>
+<blockquote>
+<p>scss函数方法和变量，全局导入后，在文件里引用报错，需要在引用的地方再导入一次？<br>scss变量需要单独导入：additionalData接受字符串时是全局每个文件都导入，用不到的地方也会导入。接受函数时可以按需导入</p>
+</blockquote>
+<pre><code>
+&#123;
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          ...commonCssLoader,
+          &#123;
+            loader: 'sass-loader',
+            options: &#123;
+              // additionalData: `
+              //   @use "@/assets/css/fun.scss" as *;  // 全局导入sass变量
+              // `,
+              additionalData: `@import "@/assets/css/fun.scss";`, // 全局导入sass变量
+            &#125;,
+          &#125;,
+        ],
+      &#125;,</code></pre>
+
 
       
     </div>
@@ -702,7 +722,7 @@ export default class ProductConfigItem extends Vue &#123;
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-10 17:25:49" itemprop="dateModified" datetime="2023-04-10T17:25:49+08:00">2023-04-10</time>
+      <time title="Modified: 2023-06-21 17:33:49" itemprop="dateModified" datetime="2023-06-21T17:33:49+08:00">2023-06-21</time>
     </span>
 
   
