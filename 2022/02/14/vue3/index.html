@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/02/assets//img/webpack5.jpg">
 <meta property="article:published_time" content="2022-02-14T07:39:03.000Z">
-<meta property="article:modified_time" content="2023-06-21T09:33:49.704Z">
+<meta property="article:modified_time" content="2023-08-01T11:06:51.215Z">
 <meta property="article:author" content="liufangfang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2022/02/assets//img/webpack5.jpg">
@@ -198,7 +198,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-06-21 17:33:49" itemprop="dateModified" datetime="2023-06-21T17:33:49+08:00">2023-06-21</time>
+      <time title="Modified: 2023-08-01 19:06:51" itemprop="dateModified" datetime="2023-08-01T19:06:51+08:00">2023-08-01</time>
     </span>
 
   
@@ -324,6 +324,16 @@ const props = defineProps(&#123;
 <li>一定是嵌套组件，如父子组件，兄弟组件依赖注入无效</li>
 <li>依赖注入是响应式的，inject 方法会自动处理响应式数据，可以直接将其用作模板中的数据，无需使用 .value 进行取值<code><pre>let name = ref('qqqqq');provide('name', name)<br>// provide('name', name.value) //无效注入,对应的值，不用加.value,否则不响应</pre></code></li>
 </ol>
+<blockquote>
+<p>createVNode创建DOM节点；h()是render函数的辅助方法，用于创建虚拟DOM节点，h()是vue2的方法，没有createVNode灵活，vue3推荐使用createVNode，<br>  createVNode(‘div’, { id: “myDivId” }, ‘内容’)</p>
+</blockquote>
+<ul>
+<li>参数1创建元素的类型，必选。参数2 创建元素的属性。参数3创建元素的内容<blockquote>
+<p>render渲染虚拟DOM<br>render(testDiv, document.body);</p>
+</blockquote>
+</li>
+<li>参数1要被渲染的虚拟DOM，必选。参数2 要渲染的位置，必选</li>
+</ul>
 <p><strong>路由</strong></p>
 <blockquote>
 <p>vue3不再使用new Router()创建router，使用createRouter<br>useRoute:获取当前路由地址，相当于模板中使用的$route<br>useRouter：返回 router 实例。相当于在模板中使用 $router</p>
@@ -335,6 +345,7 @@ const props = defineProps(&#123;
 <li>使用keepalive的页面，切换路由时页面路径更改，但是页面没有重新渲染</li>
 <li><img src="../../assets//img/webpack5.jpg" alt="Cannot find module &#39;fs/promises&#39;"><br> 原因：node版本太低，要用14以上（我用的是16解决了）</li>
 <li>getCurrentInstance只能在setup或生命周期钩子中使用,在外部使用getCurrentInstance()返回null</li>
+<li>Ref是一个特殊类型，用于在响应数据中包装原始值，由ref函数创建，不可以由reactive函数创建，否则会报错<pre><code><br>const pageInfo: Ref<PageInfoType> = reactive(&#123;<br>headerInfo: &#123;&#125;,<br>menuInfo: []<br>&#125;)<br>类型“&#123; headerInfo: &#123;&#125;; menuInfo: never[]; &#125;”缺少类型“Ref<PageInfoType>”中的以下属性: value, [RefSymbol]ts(2739)<br></code></pre></li>
 </ol>
 
     </div>
