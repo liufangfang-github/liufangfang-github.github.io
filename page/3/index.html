@@ -155,7 +155,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/07/react-router/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/07/react-hook/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -173,7 +173,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/07/react-router/" class="post-title-link" itemprop="url">react路由</a>
+          <a href="/2022/02/07/react-hook/" class="post-title-link" itemprop="url">react-hook</a>
         </h2>
 
         <div class="post-meta-container">
@@ -191,7 +191,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-02-08 18:57:56" itemprop="dateModified" datetime="2022-02-08T18:57:56+08:00">2022-02-08</time>
+      <time title="Modified: 2022-02-15 11:42:33" itemprop="dateModified" datetime="2022-02-15T11:42:33+08:00">2022-02-15</time>
     </span>
 
   
@@ -204,23 +204,46 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p><a target="_blank" rel="noopener" href="https://react-guide.github.io/react-router-cn/docs/API.html#route">路由文档</a><br><a target="_blank" rel="noopener" href="https://v5.reactrouter.com/web/api/Hooks/uselocation">路由API</a></p>
-<h2 id="query"><a href="#query" class="headerlink" title="query"></a>query</h2><p><strong>从 v4 开始，删除了 this.props.location.query 对象。删除它的主要原因是允许开发人员创建独特的方式来存储 query 字符串</strong><br><a target="_blank" rel="noopener" href="https://www.delftstack.com/zh/howto/react/force-rerender-in-react/">参考文档</a><br>函数组建中获取query使用useLocation() 钩子的实例，钩子不返回解析的query对象，需要解析钩子的实例一获取key/value对参数，<br><strong>query-string</strong> 库可以解析query对象</p>
-<pre><code>const queryToStr = require('query-string'); const result = queryToStr.parse(useLocation().search);</code></pre>
-<h2 id="params"><a href="#params" class="headerlink" title="params"></a>params</h2><p>useParams返回一个包含key/value的对象。useParams()返回的结果类似于是 {id: ‘12’, name: ‘kk’}</p>
-<blockquote>
-<p>基本配置使用</p>
-</blockquote>
-<pre>路由这样配置时<code>path: '/user/modify/:id/:name'</code>路由里参数不可以随意添加，要和path里的一一对应</pre>
-<blockquote>
-<p>多个参数时的配置和使用</p>
-</blockquote>
-<pre><code>&#123; path: '/myUrl/:manyParams', element: myElement &#125; </code>
-使用：const params = { id: 12, name: '23'}, navigate(`/myUrl/${JSON.stringify(params)})
-获取参数：useParams().manyParams
-</pre>
+          <h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><p>useRef返回一个ref对象，对象只包含了一个current属性<br>useRef() 返回undefined，可以在创建的时候传入一个null/给一个初始值，useRef(null/初始值)，传入的参数就是对象中current的值。<br><strong>useRef的变化不会主动渲染到页面</strong></p>
+<h2 id="useImperativeHandle"><a href="#useImperativeHandle" class="headerlink" title="useImperativeHandle"></a>useImperativeHandle</h2><p> useImperativeHandle在使用ref时 自定义暴露给父组件的实例值，使用子组件暴露的值/方法</p>
+<h2 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h2><p> 函数组件中定一个“state变量”，useState()返回当前定义的state和更新state的函数</p>
+<h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2><p> useEffect是异步的<br>一个组件中可以使用多个effect<br><strong>componentDidMount()</strong> 方法会在组件已经被渲染到DOM中后运行，依赖列表为空时只会被调用一次，类似于vue中的mounted<br>**componentWillUnmount()**从DOM中移除时会调用，依赖列表为空时类似于vue中的destroy生命周期<br><strong>componentDidUpdate()</strong> 会在更新后会被立即调用。首次渲染不会执行此方法。</p>
+<pre><code>useEffect(
+  () => &#123;
+    // 这里的代码块 等价于 componentDidMount
+    // do something...
 
+    // return的写法 等价于 componentWillUnmount 当前组件被卸载时执行
+    return () => &#123;
+       // do something...
+    &#125;;
+  &#125;,
+  // 依赖列表，当依赖的值有变更时候，执行副作用函数，等价于 componentDidUpdate
+  [ xxx，obj.xxx ]
+);</code></pre>
+<blockquote>
+<p>依赖列表是灵活的，有三种写法</p>
+</blockquote>
+<ul>
+<li>当数组为空[]，表示不会因为页面的状态改变而执行回调方法，仅在初始化执行一次</li>
+<li>当这个参数不传递表示页面的任何状态一旦变更都会执行回调方法</li>
+<li>数组非空时，数组里的值一旦发生变化，就会执行回调方法</li>
+</ul>
+<blockquote>
+<p>其他场景1:依赖某些值，但是不想在初始化时调用，只在依赖的值发生变化时调用，这里需要用到useRef 这个钩子</p>
+</blockquote>
+<pre><code>const firstLoad = useRef(true);
+useEffect(() => &#123;
+  if (firstLoad.current) &#123;
+    firstLoad.current = false;
+    return;
+  &#125;
+  // do something...
+&#125;, [依赖项]);
+</code></pre>
 
+<h2 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a>useReducer</h2><p> 不是一个必须的hook，不用它也可以完成正常的需求开发，useReducer可以使我们的代码具有更好的可读性、可维护性<br> <pre><code>const [state, dispatch] = useReducer(reducer, initState);</code></pre><br> useReducer接收两个参数：第一个参数是reducer函数，第二个参数是初始化的state</p>
+<h2 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo"></a>useMemo</h2><h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback"></a>useCallback</h2>
       
     </div>
 
@@ -282,7 +305,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-04 17:46:33" itemprop="dateModified" datetime="2023-04-04T17:46:33+08:00">2023-04-04</time>
+      <time title="Modified: 2023-10-11 19:22:22" itemprop="dateModified" datetime="2023-10-11T19:22:22+08:00">2023-10-11</time>
     </span>
 
   
@@ -295,8 +318,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>补充ing</p>
-<!-- = （最高阶标题）
+          <!-- = （最高阶标题）
 
 # vue（h1）
 <blockquotes>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</blockquotes>
@@ -308,6 +330,7 @@
 1. green
 
 </p> -->
+<p><img src="../../assets/img/vue-update.jpg" alt="updated生命周期"></p>
 <ul>
 <li><p>.$mount(element) 手动挂载实例</p>
 <pre><code>$mount('#app')</code>会整个替换#app</pre></li>
