@@ -1,1123 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+        技术博客
+    </title>
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
 
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+    
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="stylesheet" href="/css/main.css">
+<meta name="generator" content="Hexo 5.4.1"></head>
 
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-
-<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
-
-    <meta property="og:type" content="website">
-<meta property="og:title" content="技术博客">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="技术博客">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="liufangfang">
-<meta name="twitter:card" content="summary">
-
-
-<link rel="canonical" href="http://example.com/">
-
-
-
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
-
-<script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>技术博客</title>
-  
-
-
-
-
-
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
-
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar" role="button">
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">技术博客</h1>
-      <i class="logo-line"></i>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
+<body id="bodyx">
+    <div class="hd logodiv">
+    <img src="/img/logo.png" class="logopng">
+    <p class="logot"><span class="logo_1">&lt;</span><span class="logo_2">/</span><span class="logo_3">#</span> GEEK <span class="logo_3">#</span><span class="logo_2">/</span><span class="logo_1">&gt;</span></p>
 </div>
-
-
-
-
-
-
-
-</div>
+<div class="hd">
+    <ol class="breadcrumb">
         
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">liufangfang</p>
-  <div class="site-description" itemprop="description"></div>
+            <li><a class="ba" href="/project">作品</a></li>
+        
+            <li><a class="ba" href="/domain">域名</a></li>
+        
+            <li><a class="ba" href="/links">友联</a></li>
+        
+            <li><a class="ba" href="/about">关于</a></li>
+        
+            <li><a class="ba" target="_blank" rel="noopener" href="https://github.com/sanjinhub">Github</a></li>
+        
+    </ol>
+    <hr class="breadcrumbhr">
 </div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        <a href="/archives/">
-          <span class="site-state-item-count">22</span>
-          <span class="site-state-item-name">posts</span>
+<div class="hd">
+    
+    
+        
+        
+            <div class="titlex">
+                <p><span class="jing">#</span>
+                    2023
+                </p>
+            </div>
+            
+        
+        <a class="flink" href="/2023/10/18/issues/">
+            <div class="list">
+                <div class="postname">
+                    问题汇总
+                </div>
+                <div class="posttime">
+                    October 18th
+                </div>
+            </div>
         </a>
-      </div>
-  </nav>
+    
+        
+        
+        <a class="flink" href="/2023/04/21/canvas/">
+            <div class="list">
+                <div class="postname">
+                    canvas
+                </div>
+                <div class="posttime">
+                    April 21st
+                </div>
+            </div>
+        </a>
+    
+        
+        
+        <a class="flink" href="/2023/03/29/linux/">
+            <div class="list">
+                <div class="postname">
+                    linux
+                </div>
+                <div class="posttime">
+                    March 29th
+                </div>
+            </div>
+        </a>
+    
+        
+        
+            <div class="titlex">
+                <p><span class="jing">#</span>
+                    2022
+                </p>
+            </div>
+            
+        
+        <a class="flink" href="/2022/09/07/vite/">
+            <div class="list">
+                <div class="postname">
+                    vite
+                </div>
+                <div class="posttime">
+                    September 7th
+                </div>
+            </div>
+        </a>
+    
+        
+        
+        <a class="flink" href="/2022/07/14/info/">
+            <div class="list">
+                <div class="postname">
+                    info
+                </div>
+                <div class="posttime">
+                    July 14th
+                </div>
+            </div>
+        </a>
+    
+        
+        
+        <a class="flink" href="/2022/07/14/npm/">
+            <div class="list">
+                <div class="postname">
+                    npm
+                </div>
+                <div class="posttime">
+                    July 14th
+                </div>
+            </div>
+        </a>
+    
+        
+        
+        <a class="flink" href="/2022/06/24/d3/">
+            <div class="list">
+                <div class="postname">
+                    d3
+                </div>
+                <div class="posttime">
+                    June 24th
+                </div>
+            </div>
+        </a>
+    
+        
+        
+        <a class="flink" href="/2022/06/23/Vuex/">
+            <div class="list">
+                <div class="postname">
+                    Vuex
+                </div>
+                <div class="posttime">
+                    June 23rd
+                </div>
+            </div>
+        </a>
+    
+        
+        
+        <a class="flink" href="/2022/05/25/echarts/">
+            <div class="list">
+                <div class="postname">
+                    echarts
+                </div>
+                <div class="posttime">
+                    May 25th
+                </div>
+            </div>
+        </a>
+    
+        
+        
+        <a class="flink" href="/2022/05/13/gulp/">
+            <div class="list">
+                <div class="postname">
+                    gulp
+                </div>
+                <div class="posttime">
+                    May 13th
+                </div>
+            </div>
+        </a>
+    
 </div>
-
-
-
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
-
-    
-  <div class="back-to-top" role="button" aria-label="Back to top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/21/canvas/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/04/21/canvas/" class="post-title-link" itemprop="url">canvas</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-04-21 10:39:00" itemprop="dateCreated datePublished" datetime="2023-04-21T10:39:00+08:00">2023-04-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-24 10:32:14" itemprop="dateModified" datetime="2023-04-24T10:32:14+08:00">2023-04-24</time>
-    </span>
-
-  
+    <div class="footer" id="footer">
+    <p>Copyright © 2020 <a class="flink" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>-<a class="flink" target="_blank" rel="noopener" href="https://github.com/sanjinhub/hexo-theme-geek">Geek</a>.
+        <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
+            <input type="checkbox" name="switch" id="update_style">
+            <span class="el-switch-style"></span>
+        </label>
+<!--         <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+        </script> -->
+    </p>
 </div>
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
 
-        </div>
-      </header>
+<script src="/libs/jquery.min.js"></script>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>创建画布 canvas = document.createElement(‘canvas)</li>
-<li>获取画笔 ctx = canvas.getContext(‘2d’)</li>
-<li>绘画图形</li>
-<li>填充自定义图形时，要先定义颜色ctx.fillStyle = ‘red’，绘制结束后要调用ctx.fill(),否则颜色失败，一定要绘制结束后再调用</li>
-<li>绘制圆弧 ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);<ul>
-<li>x：圆弧中心在x轴的坐标，y：圆弧中心在Y轴的坐标，radius：圆弧半径，startAngle圆弧的起始点， endAngle：圆弧的终点</li>
-</ul>
-</li>
-</ul>
 
-      
-    </div>
+<script src="/libs/highlight/highlight.pack.js"></script>
 
-    
-    
-    
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+<script src="/js/js.js"></script>
 
+<style type="text/css">
+.v * {
+    color: #698fca;
+}
 
+.v .vlist .vcard .vhead .vsys {
+    color: #3a3e4a;
+}
 
+.v .vlist .vcard .vh .vmeta .vat {
+    color: #638fd5;
+}
 
-    
+.v .vlist .vcard .vhead .vnick {
+    color: #6ba1ff;
+}
 
+.v a {
+    color: #8696b1;
+}
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/29/linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/29/linux/" class="post-title-link" itemprop="url">linux</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-03-29 10:34:35 / Modified: 10:35:13" itemprop="dateCreated datePublished" datetime="2023-03-29T10:34:35+08:00">2023-03-29</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>删除文件： rm -rf 文件夹名称</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/07/vite/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/09/07/vite/" class="post-title-link" itemprop="url">vite</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-09-07 11:49:15" itemprop="dateCreated datePublished" datetime="2022-09-07T11:49:15+08:00">2022-09-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-10-12 14:29:16" itemprop="dateModified" datetime="2022-10-12T14:29:16+08:00">2022-10-12</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>run-s用于顺序，run-p用于并行; vue-tsc –noEmit 对.ts文件进行类型检查</li>
-<li>tsconfig.json 是typescript对应的编译配置文件。compilerOptions 这个配置是编译过程中一些编译的配置<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaord/p/16009131.html">vite在import.meta.env 对象上暴露环境变量。固定的环境变量有</a></p>
-</blockquote>
-</li>
-<li>import.meta.env.MODE: string类型，应用运行的模式，通过 vite –model dev 或者 vite build –model prod 指定</li>
-<li>import.meta.env.BASE_URL: string类型，由base配置项决定</li>
-<li>import.meta.env.PROD: boolean，应用是否运行在生成环境</li>
-<li>import.meta.env.DEV: boolean，应用是否运行在开发环境</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/suwanbin/p/13200521.html">mockjs</a><br>生成boolean： “sex|1-2”: true, </p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/14/info/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/14/info/" class="post-title-link" itemprop="url">info</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-07-14 17:52:45 / Modified: 17:55:13" itemprop="dateCreated datePublished" datetime="2022-07-14T17:52:45+08:00">2022-07-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>cookie和token</p>
-<ol>
-<li>cookie的出现主要是解决http无状态的问题，cookie可以保存用的登录状态，当用户第一次验证通过后服务端可以通过设置set-cookie将信息保存起来，下次再发送请求时直接带上cookie即可</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/14/npm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/14/npm/" class="post-title-link" itemprop="url">npm</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-07-14 17:36:18 / Modified: 17:47:45" itemprop="dateCreated datePublished" datetime="2022-07-14T17:36:18+08:00">2022-07-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>bin：命令名到本地文件名的映射 [<a target="_blank" rel="noopener" href="https://www.freesion.com/article/45281433075/]">https://www.freesion.com/article/45281433075/]</a></p>
-<ul>
-<li>npm run 后发生了什么<br>管理项目时会在package.json中，配置scripts属性。这里就是用来配置npm run XXX命令的，当执行npm run xxx时，会在scripts里找到xxx，如果是.js文件会直接执行。如果不是，我们在安装项目时会在.bin生成一个软连接，xxx时会在packge里找到对应的项目名称，然后在.bin里找到相应的xxxx.js文件，xxxx是一个软连接，链接到node_modules目录下找到xxxx包，找到包下的package.json文件里的bin</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/24/d3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/24/d3/" class="post-title-link" itemprop="url">d3</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-06-24 14:47:05" itemprop="dateCreated datePublished" datetime="2022-06-24T14:47:05+08:00">2022-06-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-15 18:04:11" itemprop="dateModified" datetime="2022-07-15T18:04:11+08:00">2022-07-15</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>v3 VS v4+<br>d3.layout.pie() -&gt; d3.pie()<br>d3.scale.category10() -&gt; d3.scaleOrdinal(d3.schemeCategory10)<br>d3.svg.arc -&gt; d3.arc<br>d3.scale.ordinal -&gt; d3.scaleOrdinal<br>d3.scale.linear() -&gt; d3.scaleLinear()</p>
-<pre><code>
-v3
-var axis = d3.svg.axis()
-       .scale(linear)       //指定比例尺
-       .orient("bottom")    //指定刻度的方向
-       .ticks(7);           //指定刻度的数量
-       
- v4+
-var axis = d3.axisBottom()
-      .scale(linear)       //指定比例尺
-      .ticks(7);           //指定刻度的数量  
-</code></pre>
-
-<ul>
-<li>rangeBand -&gt; bandwidth</li>
-</ul>
-<p>d3是在svg中绘画， echarts是在Canvas中绘画<br>svg： 1. 矢量图，放大不会失真<br>      2. 基于XML，可以为每个元素添加js事件处理器<br>      3. 不适合游戏应用<br>Canvas： 1. 位图，放大会失真<br>         2. 不支持事件处理器<br>         3. 能够以png/jpg格式保存图像<br>         4. 适合游戏应用</p>
-<ul>
-<li>text-anchor <text>标签的对齐方式text-anchor=”start”时，(x,y)为<text>的起始坐标。text-anchor=”middle”时，(x,y)为<text>的中轴坐标。text-anchor=”end”时，(x,y)为<text>的结束坐标。<br><g>g标签是一个组合标签，将SVG形状组合在一起。<pre><code>
-<g>
-    <line x1="10" y1="10" x2="90" y2="10"
-          style="stroke:green;"/>
-    <rect x="10" y="25" height="45" width="80"
-          style="stroke: black; fill: red; stroke-width:2"/>
-    <text x="10" y="100" style="stroke: blue; fill:orange">
-          Text grouped with shapes</text>
-</g>
-</code></pre>
-<blockquote>
-<p>渐变色</p>
-</blockquote>
-</li>
-<li>linearGradient用来定义线性渐变色，但是必须嵌套在defs的内部</li>
-<li>d3.interpolateBlues(t)返回与blues的顺序配色方案相对应的RGB颜色字符串， t是介于0和1之间的数字。d3.interpolateBlues(0.4)</li>
-<li>d3.interpolateRgb(a, b)用于对两种颜色进行插值，通过调整伽马值返回两种颜色之前的色值。d3.interpolateRgb(“Red”, “blue”)(0.2)</li>
-</ul>
-<blockquote>
-<p>柱状图</p>
-</blockquote>
-<ul>
-<li>domain(): 输入域，range: 输出</li>
-<li>enter()输入选择占位符：当前选中的元素在DOM中可能不存在，一般是在data()绑定数据之后，此时就知道有多少条数。</li>
-<li>d3.scale.linear() 返回一个线性比例尺;domain() 和 range() 分别设定比例尺的定义域和值域. d3.scale.linear() 的返回值，是可以当做函数来使用的。因此，才有这样的用法：linear(0.9)<pre><code>d3.scale.linear()
-      .domain([min, max])
-      .range([0, 300]);</code></pre></li>
-<li>d3.svg.axis 创建一个axis生成器</li>
-<li>d3.range(data.length) // 返回一个数组</li>
-<li>d3.scale.ordinal - 构造一个序数比例尺；输入和输出都是离散的数据</li>
-<li>ordinal.rangeBand - 取得离散块的宽度<blockquote>
-<p>饼图 内径传0最后得到饼图，传非0最后得到环形图</p>
-</blockquote>
-</li>
-<li>d3.layout.pie(data) - 构造一个新的默认的饼布局</li>
-<li>d3.svg.arc - 新建一个弧度生成器</li>
-<li>arc.centroid - 计算弧中心</li>
-<li>.step相邻两个柱状图起点的间距</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/23/Vuex/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/23/Vuex/" class="post-title-link" itemprop="url">Vuex</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-06-23 14:59:45" itemprop="dateCreated datePublished" datetime="2022-06-23T14:59:45+08:00">2022-06-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-09-20 18:29:18" itemprop="dateModified" datetime="2022-09-20T18:29:18+08:00">2022-09-20</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>vuex数据存储在内存中的，刷新页面会失效。</li>
-<li>对于不变的数据vuex可以用localstorage替代，但是如果多个页面公用一套数据时，其中一个组件改变了数据，希望另一个组件响应数据的变化localstorage无法做到<pre><code>const vuexLocal = new VuexPersistence(&#123;
-storage: window.localStorage, //使用localStorage
-reducer(val) &#123;  // 如果不用这个函指定，那么默认所有vuex数数都作持久化处理
-  return &#123;
-    select: val.select // 这里只对user模块作数据持久化
-  &#125;
-&#125;
-&#125;)
-export default  new Vuex.Store(&#123;
-actions,
-getters,
-state,
-mutations,
-strict: debug,
-plugins: debug ? [createLogger(), vuexLocal.plugin] : []
-&#125;)</code></pre></li>
-<li>plugins一个数组，可以监听 mutation（用于外部地数据持久化、记录或调试）或者提交 mutation （用于内部数据，例如 websocket 或 某些观察者）<br>createLogger：引入日志，每次操作state中的值，都会打印数据状态，并且会区别是actions还是mutations</li>
-<li>action 异步<ul>
-<li>分发action<pre><code><br>// 直接分发<br>store.dispatch('increment')<br>// 以载荷形式分发<br>store.dispatch('incrementAsync', &#123;<br>amount: 10<br>&#125;)</li>
-</ul>
-</li>
-</ul>
-<p>// 以对象形式分发<br>store.dispatch(&#123;<br>  type: ‘incrementAsync’, // 方法名字<br>  amount: 10<br>&#125;)</code></pre><br>    * </p>
-<ul>
-<li>getter store的计算属性。接受state为第一个参数，也可以接受其他 getter 作为第二个参数<br>getter可以返回一个函数，来实现getter传参<pre><code>getters: &#123;
-// ...
-getTodoById: (state) => (id) => &#123;
-  return state.todos.find(todo => todo.id === id)
-&#125;
-</code></pre></li>
-<li>mapGetters 辅助函数，将store中的函数映射到局部计算属性</li>
-</ul>
-<p>vuex4</p>
-<p>useStore获取store，需要使用key，不然获取不到数据。在html模板里可以直接使用$store.state获取数据。$store需要声明</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/25/echarts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/25/echarts/" class="post-title-link" itemprop="url">echarts</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-05-25 11:41:05" itemprop="dateCreated datePublished" datetime="2022-05-25T11:41:05+08:00">2022-05-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-06-30 11:20:06" itemprop="dateModified" datetime="2022-06-30T11:20:06+08:00">2022-06-30</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>柱状图x轴数据隔一个显示: axisLabels属性可控制<pre><code>axisLabel: &#123;<pre><code>      interval: 0,
-      rotate: 30, // 控制倾斜角度
-    &#125;&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-</li>
-<li>设置坐标刻度的颜色axisLabel<pre><code>yAxis: &#123;<pre><code>    type: &#39;value&#39;,
-    axisLabel: &#123;
-      textStyle: &#123;
-        color: &#39;#fff&#39;
-      &#125;
-    &#125;
-  &#125;&lt;/code&gt;&lt;/pre&gt;
-  axisLine 隐藏X/Y轴
-</code></pre>
-</li>
-<li>设置网格的颜色<pre><code>splitLine: &#123;<pre><code>      show: true,
-      lineStyle: &#123;
-        color: &#39;rgba(26, 161, 253, 0.2)&#39;,
-        type: &#39;solid&#39;
-      &#125;
-    &#125;&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-</li>
-<li>label颜色和他的数据颜色一样<pre><code>label: &#123;<pre><code>    color: &#39;inherit&#39;
-  &#125;,&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-</li>
-<li>legend. data 图例数组，如果为空，会取自 series.name 或者 series.encode 的 seriesName 所指定的维度</li>
-<li>折线颜色和圆点设置<pre><code>series: [<pre><code>    &#123;
-      data: [6.91, 7.22, 8.7, 12.84, 9.06, 8.48, 9.38, 6.02, 7.59, 23.22, 0],
-      type: &#39;line&#39;,
-      areaStyle: &#123; // 区域填充样式
-        color: &#39;rgba(91, 143,249, 0.15)&#39;
-      &#125;,
-      showSymbol: true, // 是否默认展示圆点
-      symbol: &#39;circle&#39;,     // 设定为实心点
-      symbolSize: 8,   // 设定实心点的大小
-      itemStyle: &#123;
-        normal: &#123;
-          color: &#39;#fff&#39;, // 圆点的颜色
-          lineStyle: &#123;
-            color: &quot;#5b8ff9&quot; // 折线的颜色
-          &#125;
-        &#125;
-      &#125;
-    &#125;
-  ]
-&#125;&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-</li>
-<li>设置饼图间隙<pre><code>itemStyle:&#123;<pre><code>  normal:&#123;
-    borderWidth: 5,
-    borderColor: &#39;#fff&#39;
-  &#125;
-&#125;,&lt;/code&gt;&lt;/pre&gt;
-</code></pre>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/13/gulp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/13/gulp/" class="post-title-link" itemprop="url">gulp</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-05-13 16:40:50 / Modified: 17:11:29" itemprop="dateCreated datePublished" datetime="2022-05-13T16:40:50+08:00">2022-05-13</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>gulp：基于流的打包构建工具；依赖node开发的。流： 流文件，一种文件的传输格式，如视频； 流格式</p>
-<blockquote>
-<p>API</p>
-</blockquote>
-<ul>
-<li>src 找到源文件</li>
-<li>task 创建基于流的任务，<pre><code>gulp.task(任务名称，处理函数)</code></pre></li>
-<li>dest() 把内容放到指定目录内</li>
-<li>watch():监听 并在发生更改时运行任务</li>
-<li>series: series(…tasks) 逐个执行各个任务</li>
-<li>parallel()， parallel(…tasks) 并行开始多个任务</li>
-<li>pipe() 管道函数</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/12/rollup/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="liufangfang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术博客">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 技术博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/12/rollup/" class="post-title-link" itemprop="url">rollup</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-05-12 15:18:38 / Modified: 15:21:15" itemprop="dateCreated datePublished" datetime="2022-05-12T15:18:38+08:00">2022-05-12</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote>
-<p>format输出文件格式</p>
-</blockquote>
-<ul>
-<li>amd: 异步模块定义，用于像RequestJS这样的模块加载器。</li>
-<li>cjs: CommonJS,适用于Node或Browserify/webpack。</li>
-<li>es: 将软件包保存为ES模块文件。</li>
-<li>iife: 一个自动执行的功能，适合作为script标签这样的，只能在浏览器中运行。</li>
-<li>umd: 通用模块定义，以amd、cjs和iife为一体。</li>
-<li>system: SystemJS加载器格式</li>
-<li><em>当format类型为iife或者umd格式的时候需要配置output.globals选项参数以提供全局变量名来替换外部导入</em>*</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">liufangfang</span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
-
-  
-
-
-
-
-
-  
-
-
-
-
-
+.v .vlist .vcard .vhead .vnick:hover {
+    color: #669bfc;
+}
+</style>
 </body>
+
 </html>
