@@ -30,17 +30,60 @@
     </div>
     <div class="post-content">
         <ul>
-<li>run-s用于顺序，run-p用于并行; vue-tsc –noEmit 对.ts文件进行类型检查</li>
-<li>tsconfig.json 是typescript对应的编译配置文件。compilerOptions 这个配置是编译过程中一些编译的配置<blockquote>
+<li><p>run-s用于顺序，run-p用于并行; vue-tsc –noEmit 对.ts文件进行类型检查</p>
+</li>
+<li><p>tsconfig.json 是typescript对应的编译配置文件。compilerOptions 这个配置是编译过程中一些编译的配置</p>
+<blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaord/p/16009131.html">vite在import.meta.env 对象上暴露环境变量。固定的环境变量有</a></p>
 </blockquote>
 </li>
-<li>import.meta.env.MODE: string类型，应用运行的模式，通过 vite –model dev 或者 vite build –model prod 指定</li>
-<li>import.meta.env.BASE_URL: string类型，由base配置项决定</li>
-<li>import.meta.env.PROD: boolean，应用是否运行在生成环境</li>
-<li>import.meta.env.DEV: boolean，应用是否运行在开发环境</li>
+<li><p>import.meta.env.MODE: string类型，应用运行的模式，通过 vite –model dev 或者 vite build –model prod 指定</p>
+</li>
+<li><p>import.meta.env.BASE_URL: string类型，由base配置项决定</p>
+</li>
+<li><p>import.meta.env.PROD: boolean，应用是否运行在生成环境</p>
+</li>
+<li><p>import.meta.env.DEV: boolean，应用是否运行在开发环境</p>
+</li>
+<li><p>@types/node是一个用于TypeScript的声明文件库，它提供了Node.js的类型定义。它的作用是为开发者在使用TypeScript编写Node.js应用程序时提供类型检查和自动补全的支持。<br>npm install @types/node –save-dev</p>
+</li>
+<li><p>vue-tsc是一个用于在Vue项目中进行TypeScript类型检查的插件。它可以在构建过程中对Vue组件和相关的TypeScript代码进行静态类型检查，以提供更好的代码质量和可维护性。</p>
+</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/suwanbin/p/13200521.html">mockjs</a><br>生成boolean： “sex|1-2”: true, </p>
+<blockquote>
+<p>安装顺序：<br>npm install -g yarn // vite项目创建方式有很多，我们采用yarn，如果没有则需要全局安装<br>yarn create vite my-vue-app –template vue-ts // 创建vite项目，并指定采用vue3+ts的项目模板<br>cd my-vue-app<br>yarn // 安装依赖<br>yarn dev // 运行</p>
+</blockquote>
+<blockquote>
+<p>配置</p>
+</blockquote>
+<ul>
+<li><p>配置别名@，一般来说我们在项目中访问静态资源时，都是采用项目路径的方式，一是看起来更简洁易懂，另外在修改时不容易出现路径问题。vite项目也需要像普通vue项目一样配置@别名：<br><code><pre>import * as path from 'path'<br>import &#123; resolve &#125; from 'path'<br>export default defineConfig(&#123;<br>plugins: [vue()],<br>resolve: &#123;<br>  //设置别名<br>  alias: &#123;</p>
+<pre><code>&#39;@&#39;: path.resolve(__dirname, &#39;src&#39;)
+</code></pre>
+<p>  }<br>},<br>})</pre></code></p>
+</li>
+<li><p>mockjs安装配置<a target="_blank" rel="noopener" href="https://juejin.cn/post/7116329383643578398">参考链接</a></p>
+</li>
+<li><p>vite-plugin-mock使用时报错，解决方法降低版本至2.9.8<a target="_blank" rel="noopener" href="https://github.com/vbenjs/vite-plugin-mock/issues/97">其他解决方法</a></p>
+<pre><code>if (!require.cache) &#123;
+^
+ReferenceError: require is not defined
+  at cleanRequireCache (file:///Users/liufangfang01/work/code/vue/pc/node_modules/vite-plugin-mock/dist/index.mjs:128:3)
+  at getMockConfig (file:///Users/liufangfang01/work/code/vue/pc/node_modules/vite-plugin-mock/dist/index.mjs:157:3)
+  at createMockServer (file:///Users/liufangfang01/work/code/vue/pc/node_modules/vite-plugin-mock/dist/index.mjs:52:20)
+  at configResolved (file:///Users/liufangfang01/work/code/vue/pc/node_modules/vite-plugin-mock/dist/index.mjs:246:16)
+  at file:///Users/liufangfang01/work/code/vue/pc/node_modules/vite/dist/node/chunks/dep-vyqc0_aB.js:67208:24
+  at Array.map (<anonymous>)
+  at resolveConfig (file:///Users/liufangfang01/work/code/vue/pc/node_modules/vite/dist/node/chunks/dep-vyqc0_aB.js:67208:10)
+  at async _createServer (file:///Users/liufangfang01/work/code/vue/pc/node_modules/vite/dist/node/chunks/dep-vyqc0_aB.js:59492:20)
+  at async CAC.<anonymous> (file:///Users/liufangfang01/work/code/vue/pc/node_modules/vite/dist/node/cli.js:764:24)
+Node.js v18.18.2</code></pre></li>
+<li><p>@vitejs/plugin-legacy 为旧版本的浏览器中提供兼容性支持 npm install –save-dev @vitejs/plugin-legacy</p>
+</li>
+<li><p>css自动添加浏览器前缀<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/599611799">autoprefixer</a></p>
+</li>
+</ul>
 
     </div>
 
