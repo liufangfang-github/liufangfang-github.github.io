@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>
+        技术博客
+    </title>
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-reply replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            webpack
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/web22050702/article/details/125541317">webpack5</a><br>[ext]：文件的后缀名，示例为’jpg’。<br>[name]：文件名本身，示例为’login-bg’。<br>[path]：相对于当前执行webpack命令的目录的相对路径（不含文件名本身），示例为’src/public-resource/imgs/‘。这个参数我感觉用处不大，除非你想把迁移后的文件放回源文件的目录或其子目录里。<br>[hash]：源文件内容的hash，用于缓存解决方案。</p>
+<p>webpack是由node写的，支持node语法</p>
+<blockquote>
+<p>loader 在打包前对文件进行处理，也就是在打包前对文件进行预处理。loader的执行书序是从下到上，从右到左</p>
+</blockquote>
+<ul>
+<li>css-loader处理.css样式文件的内容</li>
+<li>style-loader 把js中import导入的样式文件打包到js中，运行js时，将样式文件自动插入到&lt;style&gt;标签中</li>
+<li>mini-css-extract-plugin把js中import的样式文件，单独打包成一个样式文件，结合html-webpack-plugin，以link的形式插入到html文件中。</li>
+<li><em>此插件不支持HMR(热更新Hot Module Replacement)，若修改了样式文件，是不能即时在浏览器中显示出来的，需要手动刷新页面</em>* 可以自己手动热更新<br>所以 style-loader 和 mini-css-extract-plugin不用一起使用</li>
+<li>autoprefixer添加上不生效的问题，需要在package.json 里 ( 与 devDependencies 同级 ) ，设置支持哪些浏览器，必须设置支持的浏览器才会自动添加浏览器兼容<pre><code>"browserslist": [<br>  "> 1%",<br>  "last 2 versions",<br>  "not ie <= 8",<br>  "android >= 2"<br>]</code></pre><br><br>也可以在postcss.config.js文件里设置浏览器支持<per><code>plugins: [ require('autoprefixer') (&#123;<br>  browsers: [ "> 1%", "last 2 versions"]<br>&#125;)]</code></per><ul>
+<li>webpack4内置了uglifyjs-webpack-plugin这个插件，mode：production时会自动调用组件压缩js。配置了optimization后，即使配置了mode：production。也不会压缩js文件，因为配置了optimization.minimizer就表示开发者自定义压缩组件</li>
+</ul>
+</li>
+</ul>
+<p><strong>loader的类型</strong></p>
+<ul>
+<li><p>pre前面执行的loader</p>
+</li>
+<li><p>normal 普通的laoder</p>
+</li>
+<li><p>内联的</p>
+</li>
+<li><p>后置的</p>
+</li>
+<li><p>style-resources-loader 作用就是避免重复在每个样式文件中@import导入，在各个css 文件中能够直接使用 变量和公共的样式。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaolinlife/article/details/113771595">参考</a></p>
+<blockquote>
+<p>plugins 插件</p>
+</blockquote>
+<ul>
+<li><p>copy-webpack-plugin：复制文件</p>
+<pre><code>new CopyWebpackPlugin(&#123;
+  patterns: [
+    &#123; from: "doc", to: "./" &#125;
+  ],
+&#125;)</code></pre></li>
+<li><p>IgnorePlugin: Exclude certain modules from bundles,从包中排除某些模块，可以减少打包后的文件体积，new webpack.IgnorePlugin(requestRegExp, [contextRegExp])</p>
+<pre><code>new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/) // 打包时忽略moment本地化内容</code></pre></li>
+<li><p>SplitChunksPlugin前身是CommonsChunkPlugin，webpack4之前使用CommonsChunkPlugin。做代码切割：允许把代码拆分到多个文件中，可以缓存代码块<br>* </p>
+</li>
+</ul>
+<blockquote>
+<p>babel处理js，简单的说就是把ES6的代码转译成ES5<br>  将高版本语法转位低版本语法<br>模块 module</p>
+</blockquote>
+<ul>
+<li>noParse 防止webpack解析任何与正则表达式相匹配的文件<pre><code>noParse: /jquery|lodash/<br>// 从 webpack 3.0.0 开始<br>noParse: function(content) &#123;<br>return /jquery|lodash/.test(content);<br>&#125;<br></code></pre></li>
+</ul>
+<blockquote>
+<p>webpack打包图片</p>
+</blockquote>
+<ul>
+<li><p>js中创建图片引入</p>
+</li>
+<li><p>css中background引入</p>
+</li>
+<li><p>&lt;img src=’’&gt;</p>
+</li>
+<li><p>file-loader：打包文件放在build目录下</p>
+</li>
+<li><p>url-loader：把图片打包成base64，减少http请求</p>
+</li>
+<li><p><em>url-loader和file-loader同时引用时会导致图片不展示，可以在url-loader的fallback中引用file-loader</em>*</p>
+<pre><code>&#123;
+ test: /.(png|jpg|gif)$/,
+ use:&#123;
+   loader: 'url-loader',
+   options: &#123;
+     limit: 20,
+     fallback: &#123;
+       loader: 'file-loader',
+       options: &#123;
+         name: 'img/[name].[ext]?t=[hash:7]'
+       &#125;
+     &#125;
+   &#125;
+ &#125;
+&#125;</code></pre></li>
+</ul>
+<blockquote>
+<p>devtool 映射文件，辅助源码调试</p>
+</blockquote>
+<ul>
+<li>source-map: 会单独打包出一个js.map文件</li>
+<li>eval-source-map</li>
+<li>cheap-module-source-map: 不会单独构建.map文件，可以定位报错代码的位置</li>
+<li>cheap-module-eval-source-map</li>
+</ul>
+<blockquote>
+<p>resolve解析</p>
+</blockquote>
+<ul>
+<li>alias 别名<pre><code>配置：<br>alias: &#123;<br>  "@": path.resolve(__dirname, './src')<br>&#125;<br>使用：<br>background: url('@/assets/img/2.jpg');</code></pre></li>
+<li>extensions 自动解析的扩展。默认extensions: [“.js”, “.json”]，即：名字&amp;路径相同时先引入js文件</li>
+<li>mainFields 当从<strong>npm包</strong>中导入模块时。决定在package.json中使用那个字段导入模块，</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p> tree shaking本质是借助 ES module 的静态分析能力来消除无用的 js 代码的（用于清除代码中未引用的部分），是基于es6的，es6的语法在浏览器是不被识别的</p>
+</blockquote>
+<ul>
+<li>坑！想看代码是否生效，把js压缩代码关掉了，导致tree shaking不生效。webpack的tree shaking默认只在使用mode: “production”时起作用，但是如果配置去掉压缩代码的配置，webpack会默认不是“production”，然后就没开启tree shaking</li>
+<li>只导入没使用，也会被消除掉</li>
+</ul>
+<blockquote>
+<p>懒加载 没使用@babel/plugin-syntax-dynamic-import也可以？</p>
+</blockquote>
+<pre><code>import('./lazy.js').then(res => &#123;
+    console.log(res.default)
+  &#125;)</code></pre>
+
+<blockquote>
+<p>热更新<br>new webpack.HotModuleReplacementPlugin() // 每次更改代码后会自动刷新页面</p>
+</blockquote>
+<p>postcss-plugin-px2rem配置加在postcss-loader配置上。自己单独配置postcss.config.js也不行</p>
+<blockquote>
+<p>webpack5更改</p>
+</blockquote>
+<ul>
+<li>webpack5移除 devServer.quiet：除了初始启动信息之外的任何信息都不会被打印到控制台，警告报错信息在控制台也不看不见</li>
+<li>webpack5移除 devServer.before<br>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a><br>npm i node-sass sass-loader -D<br>npm install sass-loader node-sass –save-dev </li>
+</ul>
+<ul>
+<li>PhantomJS 报错，解决方法：用node&gt; 14 install</li>
+</ul>
+<p><strong>webpack5配置</strong></p>
+<blockquote>
+<p>webpack5分离js和css的插件mini-css-extract-plugin。5之前css是通过style-loader放置到页面的标签里的，现在单独抽出css，style-loader就无效了，mini-css-extract-plugin 插件中的loader会替代style-loader。配置时不需要用style-loader，否则样式会丢失。mini-css-extract-plugin处理后的css文件没有被压缩，需要单独使用css-minimizer-webpack-plugin进行压缩处理[<a target="_blank" rel="noopener" href="https://juejin.cn/post/7133599942358073358]">https://juejin.cn/post/7133599942358073358]</a></p>
+</blockquote>
+<blockquote>
+<p>配置后 build发现打包后的js文件名称都是数字，而不是模块的名字？<br>路由文件导入模块时按需导入，打包后的文件名就会是模块名</p>
+</blockquote>
+<blockquote>
+<p>scss函数方法和变量，全局导入后，在文件里引用报错，需要在引用的地方再导入一次？<br>scss变量需要单独导入：additionalData接受字符串时是全局每个文件都导入，用不到的地方也会导入。接受函数时可以按需导入</p>
+</blockquote>
+<pre><code>
+&#123;
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          ...commonCssLoader,
+          &#123;
+            loader: 'sass-loader',
+            options: &#123;
+              // additionalData: `
+              //   @use "@/assets/css/fun.scss" as *;  // 全局导入sass变量
+              // `,
+              additionalData: `@import "@/assets/css/fun.scss";`, // 全局导入sass变量
+            &#125;,
+          &#125;,
+        ],
+      &#125;,</code></pre>
+
+<ul>
+<li>.editorconfig 文件可以统一编辑时的规范，例如规范缩进空格等等</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7036041547208458277#heading-22">webpack5 项目搭建参考</a></p>
+
+    </div>
+
+    
+</div>
+    <div class="footer" id="footer">
+    <p>Copyright © 2020 <a class="flink" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>-<a class="flink" target="_blank" rel="noopener" href="https://github.com/sanjinhub/hexo-theme-geek">Geek</a>.
+        <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
+            <input type="checkbox" name="switch" id="update_style">
+            <span class="el-switch-style"></span>
+        </label>
+<!--         <script type="text/javascript">
+        var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+        document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+        </script> -->
+    </p>
+</div>
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+    color: #698fca;
+}
+
+.v .vlist .vcard .vhead .vsys {
+    color: #3a3e4a;
+}
+
+.v .vlist .vcard .vh .vmeta .vat {
+    color: #638fd5;
+}
+
+.v .vlist .vcard .vhead .vnick {
+    color: #6ba1ff;
+}
+
+.v a {
+    color: #8696b1;
+}
+
+.v .vlist .vcard .vhead .vnick:hover {
+    color: #669bfc;
+}
+</style>
+</body>
+
+</html>
