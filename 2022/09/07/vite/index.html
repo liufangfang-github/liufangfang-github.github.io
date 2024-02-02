@@ -30,46 +30,60 @@
     </div>
     <div class="post-content">
         <ul>
-<li><p>run-s用于顺序，run-p用于并行; vue-tsc –noEmit 对.ts文件进行类型检查</p>
+<li><p>run-s 用于顺序，run-p 用于并行; vue-tsc –noEmit 对.ts 文件进行类型检查</p>
 </li>
-<li><p>tsconfig.json 是typescript对应的编译配置文件。compilerOptions 这个配置是编译过程中一些编译的配置</p>
+<li><p>tsconfig.json 是 typescript 对应的编译配置文件。compilerOptions 这个配置是编译过程中一些编译的配置</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaord/p/16009131.html">vite在import.meta.env 对象上暴露环境变量。固定的环境变量有</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhaord/p/16009131.html">vite 在 import.meta.env 对象上暴露环境变量。固定的环境变量有</a></p>
 </blockquote>
 </li>
-<li><p>import.meta.env.MODE: string类型，应用运行的模式，通过 vite –model dev 或者 vite build –model prod 指定</p>
+<li><p>import.meta.env.MODE: string 类型，应用运行的模式，通过 vite –model dev 或者 vite build –model prod 指定</p>
 </li>
-<li><p>import.meta.env.BASE_URL: string类型，由base配置项决定</p>
+<li><p>import.meta.env.BASE_URL: string 类型，由 base 配置项决定</p>
 </li>
 <li><p>import.meta.env.PROD: boolean，应用是否运行在生成环境</p>
 </li>
 <li><p>import.meta.env.DEV: boolean，应用是否运行在开发环境</p>
 </li>
-<li><p>@types/node是一个用于TypeScript的声明文件库，它提供了Node.js的类型定义。它的作用是为开发者在使用TypeScript编写Node.js应用程序时提供类型检查和自动补全的支持。<br>npm install @types/node –save-dev</p>
+<li><p>@types/node 是一个用于 TypeScript 的声明文件库，它提供了 Node.js 的类型定义。它的作用是为开发者在使用 TypeScript 编写 Node.js 应用程序时提供类型检查和自动补全的支持。<br>npm install @types/node –save-dev</p>
 </li>
-<li><p>vue-tsc是一个用于在Vue项目中进行TypeScript类型检查的插件。它可以在构建过程中对Vue组件和相关的TypeScript代码进行静态类型检查，以提供更好的代码质量和可维护性。</p>
+<li><p>vue-tsc 是一个用于在 Vue 项目中进行 TypeScript 类型检查的插件。它可以在构建过程中对 Vue 组件和相关的 TypeScript 代码进行静态类型检查，以提供更好的代码质量和可维护性。</p>
 </li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/suwanbin/p/13200521.html">mockjs</a><br>生成boolean： “sex|1-2”: true, </p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/suwanbin/p/13200521.html">mockjs</a><br>生成 boolean： “sex|1-2”: true,</p>
 <blockquote>
-<p>安装顺序：<br>npm install -g yarn // vite项目创建方式有很多，我们采用yarn，如果没有则需要全局安装<br>yarn create vite my-vue-app –template vue-ts // 创建vite项目，并指定采用vue3+ts的项目模板<br>cd my-vue-app<br>yarn // 安装依赖<br>yarn dev // 运行</p>
+<p>安装顺序：<br>npm install -g yarn // vite 项目创建方式有很多，我们采用 yarn，如果没有则需要全局安装<br>yarn create vite my-vue-app –template vue-ts // 创建 vite 项目，并指定采用 vue3+ts 的项目模板<br>cd my-vue-app<br>yarn // 安装依赖<br>yarn dev // 运行</p>
 </blockquote>
 <blockquote>
 <p>配置</p>
 </blockquote>
 <ul>
-<li><p>配置别名@，一般来说我们在项目中访问静态资源时，都是采用项目路径的方式，一是看起来更简洁易懂，另外在修改时不容易出现路径问题。vite项目也需要像普通vue项目一样配置@别名：<br><code><pre>import * as path from 'path'<br>import &#123; resolve &#125; from 'path'<br>export default defineConfig(&#123;<br>plugins: [vue()],<br>resolve: &#123;<br>  //设置别名<br>  alias: &#123;</p>
-<pre><code>&#39;@&#39;: path.resolve(__dirname, &#39;src&#39;)
-</code></pre>
-<p>  }<br>},<br>})</pre></code></p>
+<li><p>配置别名@，一般来说我们在项目中访问静态资源时，都是采用项目路径的方式，一是看起来更简洁易懂，另外在修改时不容易出现路径问题。vite 项目也需要像普通 vue 项目一样配置@别名：<br><code><pre>import * as path from 'path'<br>import &#123; resolve &#125; from 'path'<br>export default defineConfig(&#123;<br>plugins: [vue()],<br>resolve: &#123;<br>//设置别名<br>alias: &#123;<br>'@': path.resolve(__dirname, 'src')<br>&#125;<br>&#125;,<br>&#125;)</pre></code></p>
 </li>
 <li><p>unplugin-auto-import 自动导入插件</p>
 </li>
-<li><p>vite –host 是 Vite 的命令行选项之一，用于指定项目启动时的主机地址。<pre><code>vite --host</code></pre>输出是<a href="http://localhost:端口">http://localhost:端口</a> 和 <a href="http://ip:端口">http://ip:端口</a> 两种格式的路径</p>
+<li><p>vite –host 是 Vite 的命令行选项之一，用于指定项目启动时的主机地址。<pre><code>vite --host</code></pre>输出是 <a href="http://localhost:端口">http://localhost:端口</a> 和 <a href="http://ip:端口">http://ip:端口</a> 两种格式的路径</p>
 </li>
-<li><p>mockjs安装配置<a target="_blank" rel="noopener" href="https://juejin.cn/post/7116329383643578398">参考链接</a></p>
+<li><p>mockjs 安装配置<a target="_blank" rel="noopener" href="https://juejin.cn/post/7116329383643578398">参考链接</a></p>
 </li>
-<li><p>vite-plugin-mock使用时报错，解决方法降低版本至2.9.8<a target="_blank" rel="noopener" href="https://github.com/vbenjs/vite-plugin-mock/issues/97">其他解决方法</a></p>
+</ul>
+<blockquote>
+<p>vscode 配置保存时自动格式化代码</p>
+</blockquote>
+<ul>
+<li><p>安装插件 eslint、prettier</p>
+</li>
+<li><p>配置 vscode 设置：打开 VS Code 的设置（快捷键：Ctrl+，），在搜索框中输入 Editor: Format On Save，勾选该选项，表示在保存时自动格式化代码</p>
+</li>
+<li><p>项目根目录文件下创建.vscode 文件-&gt; setting.json 添加如下代码<pre><code>&#123;<br>"editor.formatOnSave": true,<br>"editor.defaultFormatter": "esbenp.prettier-vscode",<br>"editor.codeActionsOnSave": &#123;<br>"source.fixAll": true<br>&#125;<br>&#125;</code></pre></p>
+</li>
+<li><p>根目录下创建.prettierrc.cjs，添加如下代码<pre><code>module.exports = &#123;<br>printWidth: 120, //一行的字符数，如果超过会进行换行，默认为 80<br>tabWidth: 2, // 一个 tab 代表几个空格数，默认为 2 个<br>useTabs: false, //是否使用 tab 进行缩进，默认为 false，表示用空格进行缩减<br>singleQuote: true, // 字符串是否使用单引号，默认为 false，使用双引号<br>semi: true, // 行尾是否使用分号，默认为 true<br>trailingComma: 'none', // 是否使用尾逗号<br>bracketSpacing: true // 对象大括号直接是否有空格，默认为 true，效果：&#123; a: 1 &#125;<br>&#125;;</code></pre></p>
+</li>
+<li><p>根目录下创建.eslintrc.cjs，添加如下代码<pre><code>module.exports = &#123;<br>root: true,<br>env: &#123;<br>node: true,<br>browser: true,<br>&#125;,<br>globals: &#123;<br>window: true,<br>document: true,<br>rlog: true,<br>relog: true,<br>_app: true,<br>CONST: true,<br>&#125;,<br>// 扩展配置。使用哪些插件进行检查<br>extends: [<br>'plugin:vue/vue3-essential',<br>'eslint:recommended',<br>'@vue/typescript/recommended',<br>'prettier',<br>// '@vue/prettier/@typescript-eslint',<br>'plugin:prettier/recommended',<br>],<br>parserOptions: &#123;<br>parsar: '@typescript-eslint/parsar',<br>ecmaVersion: 2020,<br>sourceType: 'module',<br>&#125;,<br>// 插件配置<br>plugins: ['prettier', 'html', 'vue'],<br>// 忽略文件等同于在.eslintignore 中的配置<br>// ignorePatterns: ['dist/*'],<br>rules: &#123;<br>'prettier/prettier': 'error', // 报错时展示成红色波浪线<br>'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',<br>'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',<br>&#125;,<br>&#125;;</code></pre></p>
+</li>
+</ul>
+<ul>
+<li><p>vite-plugin-mock 使用时报错，解决方法降低版本至 2.9.8<a target="_blank" rel="noopener" href="https://github.com/vbenjs/vite-plugin-mock/issues/97">其他解决方法</a></p>
 <pre><code>if (!require.cache) &#123;
 ^
 ReferenceError: require is not defined
@@ -85,7 +99,20 @@ ReferenceError: require is not defined
 Node.js v18.18.2</code></pre></li>
 <li><p>@vitejs/plugin-legacy 为旧版本的浏览器中提供兼容性支持 npm install –save-dev @vitejs/plugin-legacy</p>
 </li>
-<li><p>css自动添加浏览器前缀<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/599611799">autoprefixer</a></p>
+<li><p>css 自动添加浏览器前缀<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/599611799">autoprefixer</a></p>
+</li>
+<li><p>vite 打包后的 js 名称都是 index1.js、index2.js 是因为 views 文件夹下的组件都是 index.vue,更改页面组件名称就好了</p>
+<blockquote>
+<p>性能优化</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>动态导入</p>
+</li>
+<li><p>vite-plugin-cdn-import：cdn 加速</p>
+</li>
+<li><p>serve<br>serve: {<br>proxy: {<br>“/api”:{<br>target: “”,<br>changeOrigin: true,<br>rewrite: () =&gt; {}<br>}<br>}<br>}</p>
 </li>
 </ul>
 
