@@ -31,9 +31,15 @@
     <div class="post-content">
         <ul>
 <li>clip-path:裁剪元素，区域内显示，区域外隐藏</li>
-<li>transform用于对元素进行变换或转换的属性，可以平移、缩放、旋转个倾斜的效果，通过transform属性可以对元素进行2D或3D的变换，例如translate、scale、rotate、skew等</li>
-<li>transition用于定义元素的过渡效果，在状态改变时产生平滑的过渡动画效果</li>
+<li>transform 用于对元素进行变换或转换的属性，可以平移、缩放、旋转个倾斜的效果，通过 transform 属性可以对元素进行 2D 或 3D 的变换，例如 translate、scale、rotate、skew 等</li>
+<li>transition 用于定义元素的过渡效果，在状态改变时产生平滑的过渡动画效果</li>
 </ul>
+<ul>
+<li>安全区域指的是一个可视窗口范围，处于安全区域的内容不受圆角、齐刘海、小黑条的影响。<strong>tips:先使用 constant 再使用 env</strong><br><code><pre>.model&#123;<br>padding-bottom: constant(safe-area-inset-bottom); /_ 兼容 iOS < 11.2 _/<br>padding-bottom: env(safe-area-inset-bottom); /_ 兼容 iOS >= 11.2 _/<br>&#125;<br>.model&#123;<br>height: calc(100% - constant(safe-area-inset-bottom));<br>height: calc(100% - env(safe-area-inset-bottom));<br>&#125;<br>safe-area-inset-left: 安全区域距离左边界的距离<br>safe-area-inset-right: 安全区域距离右边界的距离<br>safe-area-inset-top: 安全区域距离顶部边界的距离<br>safe-area-inset-bottom: 安全区域距离底部边界的距离<br></pre></code></li>
+</ul>
+<p><strong>需要的注意一点：H5 网页设置 viewport-fit=cover 的时候才会生效，小程序里的 viewport-fit 默认是 cover</strong></p>
+<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,viewport-fit=cover&quot;&gt;
+</code></pre>
 
     </div>
 

@@ -51,17 +51,50 @@
 </li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/suwanbin/p/13200521.html">mockjs</a><br>生成 boolean： “sex|1-2”: true,</p>
+<p>vite 是 vue 官方团队出品，vite 是基于浏览器 Esmodule 进行模块加载的方式，对于非 ESM 模块的第三方库，如 axios，在开发阶段就需要借助预构建的过程将他们转为 ESM 模块 <strong>依赖预构建</strong><br>ES Module（简称为 ESM）是 ECMAScript 6 (ES6) 中引入的一种模块化系统。它是 JavaScript 官方标准中定义的一种模块化规范，用于在浏览器和 Node.js 环境中加载和导入模块。</p>
 <blockquote>
-<p>安装顺序：<br>npm install -g yarn // vite 项目创建方式有很多，我们采用 yarn，如果没有则需要全局安装<br>yarn create vite my-vue-app –template vue-ts // 创建 vite 项目，并指定采用 vue3+ts 的项目模板<br>cd my-vue-app<br>yarn // 安装依赖<br>yarn dev // 运行</p>
+<p>安装顺序：</p>
 </blockquote>
+<ul>
+<li>npm install -g yarn // vite 项目创建方式有很多，我们采用 yarn，如果没有则需要全局安装</li>
+<li>yarn create vite my-vue-app –template vue-ts // 创建 vite 项目，并指定采用 vue3+ts 的项目模板</li>
+<li>cd my-vue-app</li>
+<li>yarn // 安装依赖</li>
+<li>yarn add vue-router // 安装路由</li>
+<li>yarn dev // 运行</li>
+</ul>
+<blockquote>
+<p>路由配置</p>
+</blockquote>
+<ul>
+<li>createWebHashHistory/createWebHistory: hash/history 模式</li>
+<li>RouteRecordRaw 是 Vue Router 在 Vue 3 中提供的一个类型，用于定义路由配置的基本信息</li>
+<li>在 main.ts 中导入路由配置</li>
+</ul>
+<blockquote>
+<p>环境变量</p>
+</blockquote>
+<!-- - dotenv 内置第三方库，从.env 文件中读取环境变量，然后添加到 process.env 中，process node 中当前进程的一个对象 -->
+
+<ul>
+<li><p>loadEnv 是 vite 的一个方法，可以用来加载环境变量，读取.env 文件中的环境变量</p>
+</li>
+<li><p>客户端获取环境变量,vite 做了一层拦截，如果不是 VITE 开头的就不会被注入到客户端</p>
 <blockquote>
 <p>配置</p>
 </blockquote>
-<ul>
-<li><p>配置别名@，一般来说我们在项目中访问静态资源时，都是采用项目路径的方式，一是看起来更简洁易懂，另外在修改时不容易出现路径问题。vite 项目也需要像普通 vue 项目一样配置@别名：<br><code><pre>import * as path from 'path'<br>import &#123; resolve &#125; from 'path'<br>export default defineConfig(&#123;<br>plugins: [vue()],<br>resolve: &#123;<br>//设置别名<br>alias: &#123;<br>'@': path.resolve(__dirname, 'src')<br>&#125;<br>&#125;,<br>&#125;)</pre></code></p>
 </li>
-<li><p>unplugin-auto-import 自动导入插件</p>
+<li><p>别名，打包</p>
 </li>
+<li><p>配置别名@，一般来说我们在项目中访问静态资源时，都是采用项目路径的方式，一是看起来更简洁易懂，另外在修改时不容易出现路径问题。vite 项目也需要像普通 vue 项目一样配置@别名<br><code><pre><br>import * as path from 'path'<br>import &#123; resolve &#125; from 'path'<br>export default defineConfig(&#123;<br>plugins: [vue()],<br>resolve: &#123;<br>//设置别名<br>alias: &#123;<br>'@': path.resolve(__dirname, 'src')<br>&#125;<br>&#125;,<br>&#125;)</pre></code></p>
+</li>
+<li><p>unplugin-auto-import 自动导入插件<br>自动导入如果没有生效可能是在 tsconfig.json 文件没有把 auto-imports.d.ts 添加指定需要编译处理的文件列表</p>
+<pre><code> "include": [
+  "src/**/*.ts",
+  "src/**/*.tsx",
+  "src/**/*.vue",
+  "auto-imports.d.ts"
+],</code></pre></li>
 <li><p>vite –host 是 Vite 的命令行选项之一，用于指定项目启动时的主机地址。<pre><code>vite --host</code></pre>输出是 <a href="http://localhost:端口">http://localhost:端口</a> 和 <a href="http://ip:端口">http://ip:端口</a> 两种格式的路径</p>
 </li>
 <li><p>mockjs 安装配置<a target="_blank" rel="noopener" href="https://juejin.cn/post/7116329383643578398">参考链接</a></p>
